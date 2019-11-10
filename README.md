@@ -13,4 +13,6 @@ How to share code between projects:
 ![Summary](Readme-images/Section%203%20-%20Shared%20Project%20vs%20Portable%20Class%20Library/3%20-%20Disadvantages.png)
 
 Standard Libraries also better documented.
+
+In VS2019 you cant select between these two types. Only .Net Standard is available by default.
 </details>
