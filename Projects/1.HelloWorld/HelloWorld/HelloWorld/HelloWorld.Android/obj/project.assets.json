@@ -1917,11 +1917,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Programming\\Udemy\\Xamarin-Gerenal-Course-And-Projects\\Projects\\1.HelloWorld\\HelloWorld\\HelloWorld\\HelloWorld.Android\\HelloWorld.Android.csproj",
+      "projectUniqueName": "D:\\Programming\\Udemy\\Xamarin\\Projects\\1.HelloWorld\\HelloWorld\\HelloWorld\\HelloWorld.Android\\HelloWorld.Android.csproj",
       "projectName": "HelloWorld.Android",
-      "projectPath": "D:\\Programming\\Udemy\\Xamarin-Gerenal-Course-And-Projects\\Projects\\1.HelloWorld\\HelloWorld\\HelloWorld\\HelloWorld.Android\\HelloWorld.Android.csproj",
+      "projectPath": "D:\\Programming\\Udemy\\Xamarin\\Projects\\1.HelloWorld\\HelloWorld\\HelloWorld\\HelloWorld.Android\\HelloWorld.Android.csproj",
       "packagesPath": "C:\\Users\\enlar\\.nuget\\packages\\",
-      "outputPath": "D:\\Programming\\Udemy\\Xamarin-Gerenal-Course-And-Projects\\Projects\\1.HelloWorld\\HelloWorld\\HelloWorld\\HelloWorld.Android\\obj\\",
+      "outputPath": "D:\\Programming\\Udemy\\Xamarin\\Projects\\1.HelloWorld\\HelloWorld\\HelloWorld\\HelloWorld.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -1942,8 +1942,8 @@
       "frameworks": {
         "monoandroid90": {
           "projectReferences": {
-            "D:\\Programming\\Udemy\\Xamarin-Gerenal-Course-And-Projects\\Projects\\1.HelloWorld\\HelloWorld\\HelloWorld\\HelloWorld\\HelloWorld.csproj": {
-              "projectPath": "D:\\Programming\\Udemy\\Xamarin-Gerenal-Course-And-Projects\\Projects\\1.HelloWorld\\HelloWorld\\HelloWorld\\HelloWorld\\HelloWorld.csproj"
+            "D:\\Programming\\Udemy\\Xamarin\\Projects\\1.HelloWorld\\HelloWorld\\HelloWorld\\HelloWorld\\HelloWorld.csproj": {
+              "projectPath": "D:\\Programming\\Udemy\\Xamarin\\Projects\\1.HelloWorld\\HelloWorld\\HelloWorld\\HelloWorld\\HelloWorld.csproj"
             }
           }
         }

@@ -1011,11 +1011,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Programming\\Udemy\\Xamarin-Gerenal-Course-And-Projects\\Projects\\1.HelloWorld\\HelloWorld\\HelloWorld\\HelloWorld.iOS\\HelloWorld.iOS.csproj",
+      "projectUniqueName": "D:\\Programming\\Udemy\\Xamarin\\Projects\\1.HelloWorld\\HelloWorld\\HelloWorld\\HelloWorld.iOS\\HelloWorld.iOS.csproj",
       "projectName": "HelloWorld.iOS",
-      "projectPath": "D:\\Programming\\Udemy\\Xamarin-Gerenal-Course-And-Projects\\Projects\\1.HelloWorld\\HelloWorld\\HelloWorld\\HelloWorld.iOS\\HelloWorld.iOS.csproj",
+      "projectPath": "D:\\Programming\\Udemy\\Xamarin\\Projects\\1.HelloWorld\\HelloWorld\\HelloWorld\\HelloWorld.iOS\\HelloWorld.iOS.csproj",
       "packagesPath": "C:\\Users\\enlar\\.nuget\\packages\\",
-      "outputPath": "D:\\Programming\\Udemy\\Xamarin-Gerenal-Course-And-Projects\\Projects\\1.HelloWorld\\HelloWorld\\HelloWorld\\HelloWorld.iOS\\obj\\",
+      "outputPath": "D:\\Programming\\Udemy\\Xamarin\\Projects\\1.HelloWorld\\HelloWorld\\HelloWorld\\HelloWorld.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -1036,8 +1036,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "D:\\Programming\\Udemy\\Xamarin-Gerenal-Course-And-Projects\\Projects\\1.HelloWorld\\HelloWorld\\HelloWorld\\HelloWorld\\HelloWorld.csproj": {
-              "projectPath": "D:\\Programming\\Udemy\\Xamarin-Gerenal-Course-And-Projects\\Projects\\1.HelloWorld\\HelloWorld\\HelloWorld\\HelloWorld\\HelloWorld.csproj"
+            "D:\\Programming\\Udemy\\Xamarin\\Projects\\1.HelloWorld\\HelloWorld\\HelloWorld\\HelloWorld\\HelloWorld.csproj": {
+              "projectPath": "D:\\Programming\\Udemy\\Xamarin\\Projects\\1.HelloWorld\\HelloWorld\\HelloWorld\\HelloWorld\\HelloWorld.csproj"
             }
           }
         }

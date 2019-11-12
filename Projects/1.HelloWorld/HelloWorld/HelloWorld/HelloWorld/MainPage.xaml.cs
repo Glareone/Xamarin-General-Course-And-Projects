@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using Xamarin.Forms;
 
 namespace HelloWorld
@@ -11,6 +12,11 @@ namespace HelloWorld
         public MainPage()
         {
             InitializeComponent();
+        }
+
+        private void HandleClicked(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
     }
 }

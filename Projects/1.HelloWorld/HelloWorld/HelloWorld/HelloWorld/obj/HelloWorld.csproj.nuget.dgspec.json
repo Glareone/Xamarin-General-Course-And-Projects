@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Programming\\Udemy\\Xamarin-Gerenal-Course-And-Projects\\Projects\\1.HelloWorld\\HelloWorld\\HelloWorld\\HelloWorld\\HelloWorld.csproj": {}
+    "D:\\Programming\\Udemy\\Xamarin\\Projects\\1.HelloWorld\\HelloWorld\\HelloWorld\\HelloWorld\\HelloWorld.csproj": {}
   },
   "projects": {
-    "D:\\Programming\\Udemy\\Xamarin-Gerenal-Course-And-Projects\\Projects\\1.HelloWorld\\HelloWorld\\HelloWorld\\HelloWorld\\HelloWorld.csproj": {
+    "D:\\Programming\\Udemy\\Xamarin\\Projects\\1.HelloWorld\\HelloWorld\\HelloWorld\\HelloWorld\\HelloWorld.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Programming\\Udemy\\Xamarin-Gerenal-Course-And-Projects\\Projects\\1.HelloWorld\\HelloWorld\\HelloWorld\\HelloWorld\\HelloWorld.csproj",
+        "projectUniqueName": "D:\\Programming\\Udemy\\Xamarin\\Projects\\1.HelloWorld\\HelloWorld\\HelloWorld\\HelloWorld\\HelloWorld.csproj",
         "projectName": "HelloWorld",
-        "projectPath": "D:\\Programming\\Udemy\\Xamarin-Gerenal-Course-And-Projects\\Projects\\1.HelloWorld\\HelloWorld\\HelloWorld\\HelloWorld\\HelloWorld.csproj",
+        "projectPath": "D:\\Programming\\Udemy\\Xamarin\\Projects\\1.HelloWorld\\HelloWorld\\HelloWorld\\HelloWorld\\HelloWorld.csproj",
         "packagesPath": "C:\\Users\\enlar\\.nuget\\packages\\",
-        "outputPath": "D:\\Programming\\Udemy\\Xamarin-Gerenal-Course-And-Projects\\Projects\\1.HelloWorld\\HelloWorld\\HelloWorld\\HelloWorld\\obj\\",
+        "outputPath": "D:\\Programming\\Udemy\\Xamarin\\Projects\\1.HelloWorld\\HelloWorld\\HelloWorld\\HelloWorld\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
