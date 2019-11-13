@@ -6,11 +6,16 @@
              mc:Ignorable="d"
              x:Class="HelloWorld.MainPage">
 
-    <StackLayout>
+    <StackLayout Margin="16, 16, 16, 0">
         <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
+        <Label
+            x:Name="greetingLabel"
+            Text="Welcome to Xamarin.Forms!" 
            HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+           VerticalOptions="Center" />
+        <Entry x:Name="nameEntry" Placeholder="Write your name!" />
+        <Button Text="Say Hello"
+                Clicked="HandleClicked"/> 
     </StackLayout>
 
 </ContentPage>
