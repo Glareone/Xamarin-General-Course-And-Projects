@@ -12,3 +12,16 @@ D:\Programming\Udemy\Xamarin\Projects\2.TravelRecordApp\TravelRecordApp\TravelRe
 D:\Programming\Udemy\Xamarin\Projects\2.TravelRecordApp\TravelRecordApp\TravelRecordApp\TravelRecordApp\obj\Debug\netstandard2.0\TravelRecordApp.dll
 D:\Programming\Udemy\Xamarin\Projects\2.TravelRecordApp\TravelRecordApp\TravelRecordApp\TravelRecordApp\obj\Debug\netstandard2.0\ref\TravelRecordApp.dll
 D:\Programming\Udemy\Xamarin\Projects\2.TravelRecordApp\TravelRecordApp\TravelRecordApp\TravelRecordApp\obj\Debug\netstandard2.0\TravelRecordApp.pdb
+D:\Xamarin(Udemy)\Projects\2.TravelRecordApp\TravelRecordApp\TravelRecordApp\TravelRecordApp\bin\Debug\netstandard2.0\TravelRecordApp.deps.json
+D:\Xamarin(Udemy)\Projects\2.TravelRecordApp\TravelRecordApp\TravelRecordApp\TravelRecordApp\bin\Debug\netstandard2.0\TravelRecordApp.dll
+D:\Xamarin(Udemy)\Projects\2.TravelRecordApp\TravelRecordApp\TravelRecordApp\TravelRecordApp\bin\Debug\netstandard2.0\ref\TravelRecordApp.dll
+D:\Xamarin(Udemy)\Projects\2.TravelRecordApp\TravelRecordApp\TravelRecordApp\TravelRecordApp\bin\Debug\netstandard2.0\TravelRecordApp.pdb
+D:\Xamarin(Udemy)\Projects\2.TravelRecordApp\TravelRecordApp\TravelRecordApp\TravelRecordApp\obj\Debug\netstandard2.0\App.xaml.g.cs
+D:\Xamarin(Udemy)\Projects\2.TravelRecordApp\TravelRecordApp\TravelRecordApp\TravelRecordApp\obj\Debug\netstandard2.0\HomePage.xaml.g.cs
+D:\Xamarin(Udemy)\Projects\2.TravelRecordApp\TravelRecordApp\TravelRecordApp\TravelRecordApp\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+D:\Xamarin(Udemy)\Projects\2.TravelRecordApp\TravelRecordApp\TravelRecordApp\TravelRecordApp\obj\Debug\netstandard2.0\TravelRecordApp.AssemblyInfoInputs.cache
+D:\Xamarin(Udemy)\Projects\2.TravelRecordApp\TravelRecordApp\TravelRecordApp\TravelRecordApp\obj\Debug\netstandard2.0\TravelRecordApp.AssemblyInfo.cs
+D:\Xamarin(Udemy)\Projects\2.TravelRecordApp\TravelRecordApp\TravelRecordApp\TravelRecordApp\obj\Debug\netstandard2.0\XamlC.stamp
+D:\Xamarin(Udemy)\Projects\2.TravelRecordApp\TravelRecordApp\TravelRecordApp\TravelRecordApp\obj\Debug\netstandard2.0\TravelRecordApp.dll
+D:\Xamarin(Udemy)\Projects\2.TravelRecordApp\TravelRecordApp\TravelRecordApp\TravelRecordApp\obj\Debug\netstandard2.0\ref\TravelRecordApp.dll
+D:\Xamarin(Udemy)\Projects\2.TravelRecordApp\TravelRecordApp\TravelRecordApp\TravelRecordApp\obj\Debug\netstandard2.0\TravelRecordApp.pdb

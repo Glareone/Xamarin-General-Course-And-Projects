@@ -6,4 +6,7 @@
 *.njsproj
 *.sln
 *.sw?
+bin/
+obj/
+config
 .vs/

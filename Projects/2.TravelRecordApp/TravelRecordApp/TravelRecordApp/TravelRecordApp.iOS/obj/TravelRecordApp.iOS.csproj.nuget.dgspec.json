@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Programming\\Udemy\\Xamarin\\Projects\\2.TravelRecordApp\\TravelRecordApp\\TravelRecordApp\\TravelRecordApp.iOS\\TravelRecordApp.iOS.csproj": {}
+    "D:\\Xamarin(Udemy)\\Projects\\2.TravelRecordApp\\TravelRecordApp\\TravelRecordApp\\TravelRecordApp.iOS\\TravelRecordApp.iOS.csproj": {}
   },
   "projects": {
-    "D:\\Programming\\Udemy\\Xamarin\\Projects\\2.TravelRecordApp\\TravelRecordApp\\TravelRecordApp\\TravelRecordApp.iOS\\TravelRecordApp.iOS.csproj": {
+    "D:\\Xamarin(Udemy)\\Projects\\2.TravelRecordApp\\TravelRecordApp\\TravelRecordApp\\TravelRecordApp.iOS\\TravelRecordApp.iOS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Programming\\Udemy\\Xamarin\\Projects\\2.TravelRecordApp\\TravelRecordApp\\TravelRecordApp\\TravelRecordApp.iOS\\TravelRecordApp.iOS.csproj",
+        "projectUniqueName": "D:\\Xamarin(Udemy)\\Projects\\2.TravelRecordApp\\TravelRecordApp\\TravelRecordApp\\TravelRecordApp.iOS\\TravelRecordApp.iOS.csproj",
         "projectName": "TravelRecordApp.iOS",
-        "projectPath": "D:\\Programming\\Udemy\\Xamarin\\Projects\\2.TravelRecordApp\\TravelRecordApp\\TravelRecordApp\\TravelRecordApp.iOS\\TravelRecordApp.iOS.csproj",
+        "projectPath": "D:\\Xamarin(Udemy)\\Projects\\2.TravelRecordApp\\TravelRecordApp\\TravelRecordApp\\TravelRecordApp.iOS\\TravelRecordApp.iOS.csproj",
         "packagesPath": "C:\\Users\\enlar\\.nuget\\packages\\",
-        "outputPath": "D:\\Programming\\Udemy\\Xamarin\\Projects\\2.TravelRecordApp\\TravelRecordApp\\TravelRecordApp\\TravelRecordApp.iOS\\obj\\",
+        "outputPath": "D:\\Xamarin(Udemy)\\Projects\\2.TravelRecordApp\\TravelRecordApp\\TravelRecordApp\\TravelRecordApp.iOS\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
@@ -32,8 +32,8 @@
         "frameworks": {
           "xamarinios10": {
             "projectReferences": {
-              "D:\\Programming\\Udemy\\Xamarin\\Projects\\2.TravelRecordApp\\TravelRecordApp\\TravelRecordApp\\TravelRecordApp\\TravelRecordApp.csproj": {
-                "projectPath": "D:\\Programming\\Udemy\\Xamarin\\Projects\\2.TravelRecordApp\\TravelRecordApp\\TravelRecordApp\\TravelRecordApp\\TravelRecordApp.csproj"
+              "D:\\Xamarin(Udemy)\\Projects\\2.TravelRecordApp\\TravelRecordApp\\TravelRecordApp\\TravelRecordApp\\TravelRecordApp.csproj": {
+                "projectPath": "D:\\Xamarin(Udemy)\\Projects\\2.TravelRecordApp\\TravelRecordApp\\TravelRecordApp\\TravelRecordApp\\TravelRecordApp.csproj"
               }
             }
           }
@@ -65,14 +65,14 @@
         }
       }
     },
-    "D:\\Programming\\Udemy\\Xamarin\\Projects\\2.TravelRecordApp\\TravelRecordApp\\TravelRecordApp\\TravelRecordApp\\TravelRecordApp.csproj": {
+    "D:\\Xamarin(Udemy)\\Projects\\2.TravelRecordApp\\TravelRecordApp\\TravelRecordApp\\TravelRecordApp\\TravelRecordApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Programming\\Udemy\\Xamarin\\Projects\\2.TravelRecordApp\\TravelRecordApp\\TravelRecordApp\\TravelRecordApp\\TravelRecordApp.csproj",
+        "projectUniqueName": "D:\\Xamarin(Udemy)\\Projects\\2.TravelRecordApp\\TravelRecordApp\\TravelRecordApp\\TravelRecordApp\\TravelRecordApp.csproj",
         "projectName": "TravelRecordApp",
-        "projectPath": "D:\\Programming\\Udemy\\Xamarin\\Projects\\2.TravelRecordApp\\TravelRecordApp\\TravelRecordApp\\TravelRecordApp\\TravelRecordApp.csproj",
+        "projectPath": "D:\\Xamarin(Udemy)\\Projects\\2.TravelRecordApp\\TravelRecordApp\\TravelRecordApp\\TravelRecordApp\\TravelRecordApp.csproj",
         "packagesPath": "C:\\Users\\enlar\\.nuget\\packages\\",
-        "outputPath": "D:\\Programming\\Udemy\\Xamarin\\Projects\\2.TravelRecordApp\\TravelRecordApp\\TravelRecordApp\\TravelRecordApp\\obj\\",
+        "outputPath": "D:\\Xamarin(Udemy)\\Projects\\2.TravelRecordApp\\TravelRecordApp\\TravelRecordApp\\TravelRecordApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",

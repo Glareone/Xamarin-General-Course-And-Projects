@@ -1917,11 +1917,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Programming\\Udemy\\Xamarin\\Projects\\2.TravelRecordApp\\TravelRecordApp\\TravelRecordApp\\TravelRecordApp.Android\\TravelRecordApp.Android.csproj",
+      "projectUniqueName": "D:\\Xamarin(Udemy)\\Projects\\2.TravelRecordApp\\TravelRecordApp\\TravelRecordApp\\TravelRecordApp.Android\\TravelRecordApp.Android.csproj",
       "projectName": "TravelRecordApp.Android",
-      "projectPath": "D:\\Programming\\Udemy\\Xamarin\\Projects\\2.TravelRecordApp\\TravelRecordApp\\TravelRecordApp\\TravelRecordApp.Android\\TravelRecordApp.Android.csproj",
+      "projectPath": "D:\\Xamarin(Udemy)\\Projects\\2.TravelRecordApp\\TravelRecordApp\\TravelRecordApp\\TravelRecordApp.Android\\TravelRecordApp.Android.csproj",
       "packagesPath": "C:\\Users\\enlar\\.nuget\\packages\\",
-      "outputPath": "D:\\Programming\\Udemy\\Xamarin\\Projects\\2.TravelRecordApp\\TravelRecordApp\\TravelRecordApp\\TravelRecordApp.Android\\obj\\",
+      "outputPath": "D:\\Xamarin(Udemy)\\Projects\\2.TravelRecordApp\\TravelRecordApp\\TravelRecordApp\\TravelRecordApp.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -1942,8 +1942,8 @@
       "frameworks": {
         "monoandroid90": {
           "projectReferences": {
-            "D:\\Programming\\Udemy\\Xamarin\\Projects\\2.TravelRecordApp\\TravelRecordApp\\TravelRecordApp\\TravelRecordApp\\TravelRecordApp.csproj": {
-              "projectPath": "D:\\Programming\\Udemy\\Xamarin\\Projects\\2.TravelRecordApp\\TravelRecordApp\\TravelRecordApp\\TravelRecordApp\\TravelRecordApp.csproj"
+            "D:\\Xamarin(Udemy)\\Projects\\2.TravelRecordApp\\TravelRecordApp\\TravelRecordApp\\TravelRecordApp\\TravelRecordApp.csproj": {
+              "projectPath": "D:\\Xamarin(Udemy)\\Projects\\2.TravelRecordApp\\TravelRecordApp\\TravelRecordApp\\TravelRecordApp\\TravelRecordApp.csproj"
             }
           }
         }
