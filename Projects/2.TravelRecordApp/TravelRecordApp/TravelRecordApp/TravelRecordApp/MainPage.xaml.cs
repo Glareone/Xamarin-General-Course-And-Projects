@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using Xamarin.Forms;
 
 namespace TravelRecordApp
@@ -11,6 +12,21 @@ namespace TravelRecordApp
         public MainPage()
         {
             InitializeComponent();
+        }
+
+        private void LoginButton_Clicked(object sender, EventArgs e)
+        {
+            var isEmailEmpty = string.IsNullOrEmpty(emailEntry.Text);
+            var isPasswordEmpty = string.IsNullOrEmpty(passwordEntry.Text);
+
+            if (isPasswordEmpty || isEmailEmpty)
+            {
+
+            }
+            else
+            {
+                Navigation.PushAsync(new HomePage());
+            }
         }
     }
 }
