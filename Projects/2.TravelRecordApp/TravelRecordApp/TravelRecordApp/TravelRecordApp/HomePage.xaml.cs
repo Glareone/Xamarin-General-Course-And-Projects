@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using System;
+using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace TravelRecordApp
@@ -9,6 +10,11 @@ namespace TravelRecordApp
         public HomePage()
         {
             InitializeComponent();
+        }
+
+        private void ToolbarItem_OnClicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new NewTravelPage());
         }
     }
 }
