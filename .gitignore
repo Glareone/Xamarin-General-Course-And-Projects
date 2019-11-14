@@ -6,7 +6,7 @@
 *.njsproj
 *.sln
 *.sw?
-bin/
-obj/
+[Bb]in/
+[Oo]bj/
 config
 .vs/
