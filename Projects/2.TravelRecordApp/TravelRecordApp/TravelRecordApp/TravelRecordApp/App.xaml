@@ -6,6 +6,15 @@
              mc:Ignorable="d"
              x:Class="TravelRecordApp.App">
     <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="BlueColor">#1E90FF</Color>
+            <Color x:Key="WhiteColor">#FFFFFF</Color>
 
+            <!-- x:Key in Style is Explicit Style. Without it - Implicit style-->
+            <Style x:Key="NormalButton" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource BlueColor}"/>
+                <Setter Property="TextColor" Value="{StaticResource WhiteColor}" />
+            </Style>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

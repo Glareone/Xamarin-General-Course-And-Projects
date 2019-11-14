@@ -6,19 +6,21 @@
              mc:Ignorable="d"
              x:Class="TravelRecordApp.MainPage">
 
+    <!-- Resources to use it in color definition or for other purposes. Declared in App -->
     <StackLayout VerticalOptions="Center" Margin="20">
-        <Entry x:Name="emailEntry"
+        <Entry x:Name="EmailEntry"
                Placeholder="Email Address" 
-               Keyboard="Email" />
-        <Entry x:Name="passwordEntry"
+               Keyboard="Email"
+               TextColor="{StaticResource BlueColor}" />
+        <Entry x:Name="PasswordEntry"
                Placeholder="Your Password"
-               IsPassword="True" />
+               IsPassword="True"
+               TextColor="{StaticResource BlueColor}" />
         <Button Text="LogIn" 
                 Margin="0, 50, 0, 0"
                 x:Name="LoginButton"
-                Clicked="LoginButton_Clicked" 
-                BackgroundColor="CornflowerBlue"
-                TextColor="AliceBlue" />
+                Clicked="LoginButton_Clicked"
+                Style="{StaticResource NormalButton}" />
     </StackLayout>
 
 </ContentPage>
