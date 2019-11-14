@@ -4,7 +4,7 @@ using Xamarin.Forms.Xaml;
 namespace TravelRecordApp
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class HomePage : ContentPage
+    public partial class HomePage : TabbedPage
     {
         public HomePage()
         {
