@@ -4,8 +4,18 @@ namespace TravelRecordApp
 {
     public partial class App : Application
     {
+        public static string DatabaseLocation = string.Empty;
+
         public App()
         {
+            InitializeComponent();
+
+            MainPage = new NavigationPage(new MainPage());
+        }
+
+        public App(string databaseLocation)
+        {
+            DatabaseLocation = databaseLocation;
             InitializeComponent();
 
             MainPage = new NavigationPage(new MainPage());

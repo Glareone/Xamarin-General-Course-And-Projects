@@ -6,11 +6,10 @@
             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
             mc:Ignorable="d"
             x:Class="TravelRecordApp.HomePage"
-            xmlns:local="clr-namespace:TravelRecordApp"
->
+            xmlns:local="clr-namespace:TravelRecordApp">
     <!-- Pay attention on xmlns:local="clr-namespace:TravelRecordApp" -->
     <TabbedPage.ToolbarItems>
-        <ToolbarItem Text="Add" Clicked="ToolbarItem_OnClicked"/>
+        <ToolbarItem Text="Add" Clicked="ToolbarItem_OnClicked" />
     </TabbedPage.ToolbarItems>
     <local:HistoryPage Title="History" />
     <local:MapPage Title="Map" />
