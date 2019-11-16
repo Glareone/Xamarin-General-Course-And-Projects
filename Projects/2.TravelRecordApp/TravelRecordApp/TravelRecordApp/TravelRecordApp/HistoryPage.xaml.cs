@@ -24,5 +24,13 @@ namespace TravelRecordApp
                 postListView.ItemsSource = dbConnection.Table<Post>().ToList();
             }
         }
+
+        private void PostListView_OnItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            if (postListView.SelectedItem is Post selectedPost)
+            {
+                Navigation.PushAsync(new PostDetailPage(selectedPost));
+            }
+        }
     }
 }
