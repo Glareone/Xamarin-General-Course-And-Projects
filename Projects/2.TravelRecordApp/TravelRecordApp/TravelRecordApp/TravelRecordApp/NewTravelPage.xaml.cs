@@ -33,7 +33,7 @@ namespace TravelRecordApp
                 }
                 else
                 {
-                    DisplayAlert("Success", "Experience failed to be inserted", "Ok");
+                    DisplayAlert("Failed", "Experience failed to be inserted", "Ok");
                 }
             }
         }
