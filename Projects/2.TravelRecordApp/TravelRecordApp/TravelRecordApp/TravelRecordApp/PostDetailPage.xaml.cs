@@ -15,7 +15,7 @@ namespace TravelRecordApp
         {
             InitializeComponent();
 
-            this._selectedPost = selectedPost;
+            _selectedPost = selectedPost;
             ExperienceEntry.Text = selectedPost.Experience;
         }
 

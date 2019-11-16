@@ -1,4 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
+
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
@@ -9,14 +10,14 @@
     <!-- Resources to use it in color definition or for other purposes. Declared in App -->
     <StackLayout VerticalOptions="Center" Margin="20">
         <Entry x:Name="EmailEntry"
-               Placeholder="Email Address" 
+               Placeholder="Email Address"
                Keyboard="Email"
                TextColor="{StaticResource BlueColor}" />
         <Entry x:Name="PasswordEntry"
                Placeholder="Your Password"
                IsPassword="True"
                TextColor="{StaticResource BlueColor}" />
-        <Button Text="LogIn" 
+        <Button Text="LogIn"
                 Margin="0, 50, 0, 0"
                 x:Name="LoginButton"
                 Clicked="LoginButton_Clicked"

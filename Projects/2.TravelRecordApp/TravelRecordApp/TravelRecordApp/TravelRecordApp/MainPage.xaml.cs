@@ -21,7 +21,6 @@ namespace TravelRecordApp
 
             if (isPasswordEmpty || isEmailEmpty)
             {
-
             }
             else
             {
