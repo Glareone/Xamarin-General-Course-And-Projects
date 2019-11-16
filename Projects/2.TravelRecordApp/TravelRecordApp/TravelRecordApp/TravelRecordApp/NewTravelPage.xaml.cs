@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+using SQLite;
+using TravelRecordApp.Model;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -15,6 +12,30 @@ namespace TravelRecordApp
         public NewTravelPage()
         {
             InitializeComponent();
+        }
+
+        private void SaveExperience_OnClicked(object sender, EventArgs e)
+        {
+            var post = new Post
+            {
+                Experience = ExperienceEntry.Text
+            };
+
+            using (var connection = new SQLiteConnection(App.DatabaseLocation))
+            {
+                connection.CreateTable<Post>();
+
+                var insertRowsAmount = connection.Insert(post);
+
+                if (insertRowsAmount > 0)
+                {
+                    DisplayAlert("Success", "Experience successfully inserted", "Ok");
+                }
+                else
+                {
+                    DisplayAlert("Success", "Experience failed to be inserted", "Ok");
+                }
+            }
         }
     }
 }
