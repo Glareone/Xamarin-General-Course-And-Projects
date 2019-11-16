@@ -20,6 +20,9 @@ namespace TravelRecordApp.Droid
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 
+            // Map initialization for AndroidApp
+            Xamarin.FormsMaps.Init(this, savedInstanceState);
+
             var dbName= "travel_db.sqlite";
             var folderPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
             var fullPath = Path.Combine(folderPath, dbName);

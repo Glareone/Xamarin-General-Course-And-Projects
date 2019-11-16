@@ -5,12 +5,9 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="TravelRecordApp.MapPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="This is the map page!"
-                   VerticalOptions="CenterAndExpand"
-                   HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+             x:Class="TravelRecordApp.MapPage"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps">
+    <maps:Map HorizontalOptions="FillAndExpand" 
+              x:Name="LocationsMap"
+              MapType="Street"/>
 </ContentPage>
