@@ -35,6 +35,10 @@
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcon.appiconset</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>We need access to your location to im</string>
+	<string>We need to access to your location to improve the app experience</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>We need to access to your calendars to be able to access permissions (I Know its odd)</string>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>We need to access to your bluetooth to be able to access permissions (I Know its odd)</string>
 </dict>
 </plist>
