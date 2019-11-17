@@ -23,6 +23,9 @@ namespace TravelRecordApp.iOS
         {
             global::Xamarin.Forms.Forms.Init();
 
+            //Method which prepares IOS to use Xamarin Maps
+            Xamarin.FormsMaps.Init();
+
             var dbName = "travel_db.sqlite";
 
             // IOS doesn't allow store dbfile in Personal folder.
