@@ -46,6 +46,10 @@
               "target": "Package",
               "version": "[3.0.0.12, )"
             },
+            "Xam.Plugin.Geolocator": {
+              "target": "Package",
+              "version": "[4.5.0.6, )"
+            },
             "Xamarin.Essentials": {
               "target": "Package",
               "version": "[1.2.0, )"
@@ -125,6 +129,10 @@
             "Plugin.Permissions": {
               "target": "Package",
               "version": "[3.0.0.12, )"
+            },
+            "Xam.Plugin.Geolocator": {
+              "target": "Package",
+              "version": "[4.5.0.6, )"
             },
             "Xamarin.Essentials": {
               "target": "Package",
