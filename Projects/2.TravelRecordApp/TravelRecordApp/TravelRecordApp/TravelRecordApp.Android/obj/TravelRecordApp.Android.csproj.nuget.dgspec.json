@@ -23,14 +23,14 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "monoandroid90"
+          "monoandroid81"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "monoandroid90": {
+          "monoandroid81": {
             "projectReferences": {
               "D:\\Xamarin(Udemy)\\Projects\\2.TravelRecordApp\\TravelRecordApp\\TravelRecordApp\\TravelRecordApp\\TravelRecordApp.csproj": {
                 "projectPath": "D:\\Xamarin(Udemy)\\Projects\\2.TravelRecordApp\\TravelRecordApp\\TravelRecordApp\\TravelRecordApp\\TravelRecordApp.csproj"
@@ -40,7 +40,7 @@
         }
       },
       "frameworks": {
-        "monoandroid90": {
+        "monoandroid81": {
           "dependencies": {
             "Newtonsoft.Json": {
               "target": "Package",
@@ -117,10 +117,6 @@
       "frameworks": {
         "netstandard2.0": {
           "dependencies": {
-            "Microsoft.Net.Http": {
-              "target": "Package",
-              "version": "[2.2.29, )"
-            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",
