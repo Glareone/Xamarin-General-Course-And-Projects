@@ -1,10 +1,16 @@
 ﻿using System;
+using System.Collections.Generic;
 using Plugin.Geolocator;
 using Plugin.Geolocator.Abstractions;
 using Plugin.Permissions;
 using Plugin.Permissions.Abstractions;
+using SQLite;
+using TravelRecordApp.Model;
 using Xamarin.Forms;
+using Xamarin.Forms.Maps;
 using Xamarin.Forms.Xaml;
+using GeoLocatorPosition = Plugin.Geolocator.Abstractions.Position;
+using MapPosition = Xamarin.Forms.Maps.Position;
 
 namespace TravelRecordApp
 {
@@ -73,6 +79,38 @@ namespace TravelRecordApp
             }
 
             GetLocation();
+
+            var posts = GetPosts();
+            DisplayOnMap(posts);
+        }
+
+        private void DisplayOnMap(IEnumerable<Post> posts)
+        {
+            try
+            {
+                foreach (var post in posts)
+                {
+                    var position = new MapPosition(post.Latitude, post.Longitude);
+
+                    var pin = new Pin
+                    {
+                        Type = PinType.SavedPin,
+                        Position = position,
+                        Label = post.VenueName,
+                        Address = post.Address
+                    };
+
+                    LocationsMap.Pins.Add(pin);
+                }
+            }
+            catch (NullReferenceException ex)
+            {
+
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
 
         protected override void OnDisappearing()
@@ -96,11 +134,21 @@ namespace TravelRecordApp
             MoveMap(position);
         }
 
-        private void MoveMap(Position position)
+        private void MoveMap(GeoLocatorPosition position)
         {
             var mapCenter = new Xamarin.Forms.Maps.Position(position.Latitude, position.Longitude);
             var mapSpan = new Xamarin.Forms.Maps.MapSpan(mapCenter, 1, 1);
             LocationsMap.MoveToRegion(mapSpan);
+        }
+
+        private static IEnumerable<Post> GetPosts()
+        {
+            using (var dbConnection = new SQLiteConnection(App.DatabaseLocation))
+            {
+                dbConnection.CreateTable<Post>();
+
+                return dbConnection.Table<Post>().ToList();
+            }
         }
     }
 }

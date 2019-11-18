@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Plugin.Geolocator;
 using SQLite;
 using TravelRecordApp.Logic;
@@ -18,25 +19,42 @@ namespace TravelRecordApp
 
         private void SaveExperience_OnClicked(object sender, EventArgs e)
         {
-            var post = new Post
+            try
             {
-                Experience = ExperienceEntry.Text
-            };
+                var selectedVenue = venueListView.SelectedItem as Venue;
+                var firstCategory = selectedVenue?.categories.FirstOrDefault();
 
-            using (var connection = new SQLiteConnection(App.DatabaseLocation))
+                var post = new Post
+                {
+                    Experience = ExperienceEntry.Text,
+                    CategoryId = firstCategory?.id,
+                    CategoryName = firstCategory?.name,
+                    Address = selectedVenue?.location.address,
+                    Distance = selectedVenue?.location?.distance ?? default(int),
+                    Latitude = selectedVenue?.location?.lat ?? default(double),
+                    Longitude = selectedVenue?.location?.lng ?? default(double),
+                    VenueName = selectedVenue?.name
+                };
+
+                using (var connection = new SQLiteConnection(App.DatabaseLocation))
+                {
+                    connection.CreateTable<Post>();
+
+                    var insertRowsAmount = connection.Insert(post);
+
+                    if (insertRowsAmount > 0)
+                    {
+                        DisplayAlert("Success", "Experience successfully inserted", "Ok");
+                    }
+                    else
+                    {
+                        DisplayAlert("Failure", "Experience failed to be inserted", "Ok");
+                    }
+                }
+            }
+            catch (NullReferenceException ex)
             {
-                connection.CreateTable<Post>();
 
-                var insertRowsAmount = connection.Insert(post);
-
-                if (insertRowsAmount > 0)
-                {
-                    DisplayAlert("Success", "Experience successfully inserted", "Ok");
-                }
-                else
-                {
-                    DisplayAlert("Failure", "Experience failed to be inserted", "Ok");
-                }
             }
         }
 
@@ -48,6 +66,8 @@ namespace TravelRecordApp
             var position = await locator.GetPositionAsync();
 
             var venues = await VenueLogic.GetVenues(position.Latitude, position.Longitude);
+
+            venueListView.ItemsSource = venues;
         }
     }
 }
