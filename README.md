@@ -23,3 +23,5 @@ In VS2019 you cant select between these two types. Only .Net Standard is availab
 
 Icon generator:
 [AndroidAssetStudio](https://romannurik.github.io/AndroidAssetStudio/index.html)
+[IOS Icons](https://icons8.com/)
+
