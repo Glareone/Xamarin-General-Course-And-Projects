@@ -136,8 +136,8 @@ namespace TravelRecordApp
 
         private void MoveMap(GeoLocatorPosition position)
         {
-            var mapCenter = new Xamarin.Forms.Maps.Position(position.Latitude, position.Longitude);
-            var mapSpan = new Xamarin.Forms.Maps.MapSpan(mapCenter, 1, 1);
+            var mapCenter = new MapPosition(position.Latitude, position.Longitude);
+            var mapSpan = new MapSpan(mapCenter, 1, 1);
             LocationsMap.MoveToRegion(mapSpan);
         }
 

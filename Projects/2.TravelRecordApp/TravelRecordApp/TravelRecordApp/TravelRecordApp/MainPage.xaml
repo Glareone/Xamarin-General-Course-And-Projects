@@ -9,6 +9,11 @@
 
     <!-- Resources to use it in color definition or for other purposes. Declared in App -->
     <StackLayout VerticalOptions="Center" Margin="20">
+        <Image x:Name="IconImage"
+               Aspect="AspectFit"
+               HorizontalOptions="FillAndExpand"
+               Margin="0, 0, 0, 50"
+               HeightRequest="150"/>
         <Entry x:Name="EmailEntry"
                Placeholder="Email Address"
                Keyboard="Email"
