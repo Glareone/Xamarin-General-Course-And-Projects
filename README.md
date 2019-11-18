@@ -18,3 +18,10 @@ Standard Libraries also better documented.
 
 In VS2019 you cant select between these two types. Only .Net Standard is available by default.
 </details>
+
+### Useful links:
+
+Icon generator:
+[AndroidAssetStudio](https://romannurik.github.io/AndroidAssetStudio/index.html)
+[IOS Icons](https://icons8.com/)
+
