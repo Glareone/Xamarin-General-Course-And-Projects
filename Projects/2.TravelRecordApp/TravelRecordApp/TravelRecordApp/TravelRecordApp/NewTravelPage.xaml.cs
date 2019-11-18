@@ -1,5 +1,7 @@
 ﻿using System;
+using Plugin.Geolocator;
 using SQLite;
+using TravelRecordApp.Logic;
 using TravelRecordApp.Model;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -36,6 +38,16 @@ namespace TravelRecordApp
                     DisplayAlert("Failure", "Experience failed to be inserted", "Ok");
                 }
             }
+        }
+
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+
+            var locator = CrossGeolocator.Current;
+            var position = await locator.GetPositionAsync();
+
+            var venues = await VenueLogic.GetVenues(position.Latitude, position.Longitude);
         }
     }
 }
