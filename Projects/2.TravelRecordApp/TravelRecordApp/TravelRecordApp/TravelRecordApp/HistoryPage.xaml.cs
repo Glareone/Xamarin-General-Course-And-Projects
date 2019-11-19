@@ -27,10 +27,7 @@ namespace TravelRecordApp
 
         private void PostListView_OnItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            if (postListView.SelectedItem is Post selectedPost)
-            {
-                Navigation.PushAsync(new PostDetailPage(selectedPost));
-            }
+            if (postListView.SelectedItem is Post selectedPost) Navigation.PushAsync(new PostDetailPage(selectedPost));
         }
     }
 }

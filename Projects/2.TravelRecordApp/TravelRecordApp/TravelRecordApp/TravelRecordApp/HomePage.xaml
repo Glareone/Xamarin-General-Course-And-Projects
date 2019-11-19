@@ -13,7 +13,7 @@
                      Icon="add.png"
                      Clicked="ToolbarItem_OnClicked" />
     </TabbedPage.ToolbarItems>
-    <local:HistoryPage Title="History" 
+    <local:HistoryPage Title="History"
                        Icon="home.png" />
     <local:MapPage Title="Map"
                    Icon="map.png" />

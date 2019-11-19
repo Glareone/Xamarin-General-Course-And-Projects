@@ -30,9 +30,9 @@ namespace TravelRecordApp
                     CategoryId = firstCategory?.id,
                     CategoryName = firstCategory?.name,
                     Address = selectedVenue?.location.address,
-                    Distance = selectedVenue?.location?.distance ?? default(int),
-                    Latitude = selectedVenue?.location?.lat ?? default(double),
-                    Longitude = selectedVenue?.location?.lng ?? default(double),
+                    Distance = selectedVenue?.location?.distance ?? default,
+                    Latitude = selectedVenue?.location?.lat ?? default,
+                    Longitude = selectedVenue?.location?.lng ?? default,
                     VenueName = selectedVenue?.name
                 };
 
@@ -43,18 +43,13 @@ namespace TravelRecordApp
                     var insertRowsAmount = connection.Insert(post);
 
                     if (insertRowsAmount > 0)
-                    {
                         DisplayAlert("Success", "Experience successfully inserted", "Ok");
-                    }
                     else
-                    {
                         DisplayAlert("Failure", "Experience failed to be inserted", "Ok");
-                    }
                 }
             }
             catch (NullReferenceException ex)
             {
-
             }
         }
 

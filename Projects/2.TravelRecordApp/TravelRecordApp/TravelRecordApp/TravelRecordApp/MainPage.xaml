@@ -13,7 +13,7 @@
                Aspect="AspectFit"
                HorizontalOptions="FillAndExpand"
                Margin="0, 0, 0, 50"
-               HeightRequest="150"/>
+               HeightRequest="150" />
         <Entry x:Name="EmailEntry"
                Placeholder="Email Address"
                Keyboard="Email"
