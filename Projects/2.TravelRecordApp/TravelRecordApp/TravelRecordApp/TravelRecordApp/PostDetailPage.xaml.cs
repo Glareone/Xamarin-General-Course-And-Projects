@@ -28,13 +28,9 @@ namespace TravelRecordApp
                 var updatedRowsAmount = connection.Update(_selectedPost);
 
                 if (updatedRowsAmount > 0)
-                {
                     DisplayAlert("Success", "Experience successfully updated", "Ok");
-                }
                 else
-                {
                     DisplayAlert("Failure", "Experience failed to be updated", "Ok");
-                }
             }
 
             Navigation.PopAsync();
@@ -47,13 +43,9 @@ namespace TravelRecordApp
                 var deletedRowsAmount = connection.Delete(_selectedPost);
 
                 if (deletedRowsAmount > 0)
-                {
                     DisplayAlert("Success", "Experience successfully deleted", "Ok");
-                }
                 else
-                {
                     DisplayAlert("Failure", "Experience failed to be deleted", "Ok");
-                }
             }
 
             Navigation.PopAsync();

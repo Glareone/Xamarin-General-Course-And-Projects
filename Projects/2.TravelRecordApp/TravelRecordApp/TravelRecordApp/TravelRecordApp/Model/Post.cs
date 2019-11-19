@@ -1,16 +1,12 @@
-﻿using System.Collections.Generic;
-using SQLite;
+﻿using SQLite;
 
 namespace TravelRecordApp.Model
 {
     public class Post
     {
-        [PrimaryKey]
-        [AutoIncrement] 
-        public int Id { get; set; }
+        [PrimaryKey] [AutoIncrement] public int Id { get; set; }
 
-        [MaxLength(250)]
-        public string Experience { get; set; }
+        [MaxLength(250)] public string Experience { get; set; }
 
         public string VenueName { get; set; }
 

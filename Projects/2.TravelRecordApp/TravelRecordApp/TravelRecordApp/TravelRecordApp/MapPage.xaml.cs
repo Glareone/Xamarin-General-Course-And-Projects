@@ -36,15 +36,10 @@ namespace TravelRecordApp
                 {
                     if (await CrossPermissions.Current.ShouldShowRequestPermissionRationaleAsync(Permission
                         .LocationWhenInUse))
-                    {
                         await DisplayAlert("Your location is needed", "We need to get access to your location", "Ok");
-                    }
 
                     var result = await CrossPermissions.Current.RequestPermissionsAsync(Permission.LocationWhenInUse);
-                    if (result.ContainsKey(Permission.LocationWhenInUse))
-                    {
-                        status = result[Permission.LocationWhenInUse];
-                    }
+                    if (result.ContainsKey(Permission.LocationWhenInUse)) status = result[Permission.LocationWhenInUse];
                 }
 
                 if (status == PermissionStatus.Granted)
@@ -105,11 +100,9 @@ namespace TravelRecordApp
             }
             catch (NullReferenceException ex)
             {
-
             }
             catch (Exception ex)
             {
-
             }
         }
 
