@@ -33,3 +33,6 @@ Icon generator:
 [AndroidAssetStudio](https://romannurik.github.io/AndroidAssetStudio/index.html)
 [IOS Icons](https://icons8.com/)
 
+Make your git ignore file easier:
+[Git Ignore File Constructor](http://gitignore.io/)
+
