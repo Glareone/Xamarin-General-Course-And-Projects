@@ -3,6 +3,7 @@ using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
 using Android.OS;
+using Microsoft.WindowsAzure.MobileServices;
 using Plugin.Permissions;
 using Environment = System.Environment;
 
@@ -19,7 +20,10 @@ namespace TravelRecordApp.Droid
             base.OnCreate(savedInstanceState);
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
-            global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+            Xamarin.Forms.Forms.Init(this, savedInstanceState);
+
+            // We have to call init method to access to be able to use AzureServices
+            CurrentPlatform.Init();
 
             // Map initialization for AndroidApp
             Xamarin.FormsMaps.Init(this, savedInstanceState);

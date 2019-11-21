@@ -29,5 +29,10 @@ namespace TravelRecordApp
                 Navigation.PushAsync(new HomePage());
             }
         }
+
+        private void NavigateToRegisterPageButton_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new RegisterPage());
+        }
     }
 }

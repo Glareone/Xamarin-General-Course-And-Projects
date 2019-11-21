@@ -2,6 +2,7 @@
 using System.IO;
 
 using Foundation;
+using Microsoft.WindowsAzure.MobileServices;
 using UIKit;
 
 namespace TravelRecordApp.iOS
@@ -23,7 +24,10 @@ namespace TravelRecordApp.iOS
         {
             global::Xamarin.Forms.Forms.Init();
 
-            //Method which prepares IOS to use Xamarin Maps
+            // We have to call init method to access to be able to use AzureServices
+            CurrentPlatform.Init();
+
+            // Method which prepares IOS to use Xamarin Maps
             Xamarin.FormsMaps.Init();
 
             var dbName = "travel_db.sqlite";

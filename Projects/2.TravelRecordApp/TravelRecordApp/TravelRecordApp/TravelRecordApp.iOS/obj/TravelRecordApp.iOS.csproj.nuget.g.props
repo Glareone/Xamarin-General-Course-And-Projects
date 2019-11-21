@@ -15,4 +15,7 @@
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <Import Project="C:\Microsoft\Xamarin\NuGet\xamarin.forms\4.2.0.709249\build\Xamarin.Forms.props" Condition="Exists('C:\Microsoft\Xamarin\NuGet\xamarin.forms\4.2.0.709249\build\Xamarin.Forms.props')" />
   </ImportGroup>
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgValidation Condition=" '$(PkgValidation)' == '' ">C:\Users\enlar\.nuget\packages\validation\2.2.8</PkgValidation>
+  </PropertyGroup>
 </Project>
