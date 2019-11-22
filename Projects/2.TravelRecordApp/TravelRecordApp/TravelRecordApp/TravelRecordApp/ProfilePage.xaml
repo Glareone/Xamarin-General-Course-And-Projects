@@ -13,14 +13,14 @@
                    HorizontalOptions="Center"
                    TextColor="DodgerBlue"
                    FontAttributes="Bold" />
-            <Label Text="posts" 
+            <Label Text="posts"
                    HorizontalOptions="Center"
-                   TextColor="LightGray"/>
+                   TextColor="LightGray" />
             <ListView x:Name="categoriesListView">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <TextCell Text="{Binding Path=Key}"
-                                  Detail="{Binding Path=Value}"/> 
+                                  Detail="{Binding Path=Value}" />
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>

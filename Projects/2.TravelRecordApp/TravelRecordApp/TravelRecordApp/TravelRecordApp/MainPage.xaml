@@ -27,7 +27,8 @@
                 x:Name="LogIn"
                 Clicked="LoginButton_Clicked"
                 Style="{StaticResource NormalButton}" />
-        <Button x:Name="NavigateToRegisterPage" Text="Register" HorizontalOptions="End" Clicked="NavigateToRegisterPageButton_Clicked"/>
+        <Button x:Name="NavigateToRegisterPage" Text="Register" HorizontalOptions="End"
+                Clicked="NavigateToRegisterPageButton_Clicked" />
     </StackLayout>
 
 </ContentPage>
