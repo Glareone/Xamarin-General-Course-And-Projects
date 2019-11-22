@@ -81,28 +81,19 @@ namespace TravelRecordApp
 
         private void DisplayOnMap(IEnumerable<Post> posts)
         {
-            try
+            foreach (var post in posts)
             {
-                foreach (var post in posts)
+                var position = new MapPosition(post.Latitude, post.Longitude);
+
+                var pin = new Pin
                 {
-                    var position = new MapPosition(post.Latitude, post.Longitude);
+                    Type = PinType.SavedPin,
+                    Position = position,
+                    Label = post.VenueName,
+                    Address = post.Address
+                };
 
-                    var pin = new Pin
-                    {
-                        Type = PinType.SavedPin,
-                        Position = position,
-                        Label = post.VenueName,
-                        Address = post.Address
-                    };
-
-                    LocationsMap.Pins.Add(pin);
-                }
-            }
-            catch (NullReferenceException ex)
-            {
-            }
-            catch (Exception ex)
-            {
+                LocationsMap.Pins.Add(pin);
             }
         }
 

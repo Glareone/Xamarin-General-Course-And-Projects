@@ -1,9 +1,11 @@
 ﻿using System;
 using System.IO;
-
 using Foundation;
 using Microsoft.WindowsAzure.MobileServices;
 using UIKit;
+using Xamarin;
+using Xamarin.Forms;
+using Xamarin.Forms.Platform.iOS;
 
 namespace TravelRecordApp.iOS
 {
@@ -11,7 +13,7 @@ namespace TravelRecordApp.iOS
     // User Interface of the application, as well as listening (and optionally responding) to 
     // application events from iOS.
     [Register("AppDelegate")]
-    public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate
+    public class AppDelegate : FormsApplicationDelegate
     {
         //
         // This method is invoked when the application has loaded and is ready to run. In this 
@@ -22,19 +24,20 @@ namespace TravelRecordApp.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
-            global::Xamarin.Forms.Forms.Init();
+            Forms.Init();
 
             // We have to call init method to access to be able to use AzureServices
             CurrentPlatform.Init();
 
             // Method which prepares IOS to use Xamarin Maps
-            Xamarin.FormsMaps.Init();
+            FormsMaps.Init();
 
             var dbName = "travel_db.sqlite";
 
             // IOS doesn't allow store dbfile in Personal folder.
             // That's why we need to go up from personal folder and move to another folder near it with name "Library"
-            var folderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "..", "Library");
+            var folderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "..",
+                "Library");
             var fullPath = Path.Combine(folderPath, dbName);
 
             LoadApplication(new App(fullPath));
