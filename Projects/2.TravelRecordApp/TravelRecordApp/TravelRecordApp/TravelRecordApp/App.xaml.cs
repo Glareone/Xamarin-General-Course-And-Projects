@@ -1,4 +1,5 @@
-﻿using Microsoft.WindowsAzure.MobileServices;
+﻿using System.Net.Http;
+using Microsoft.WindowsAzure.MobileServices;
 using Xamarin.Forms;
 
 namespace TravelRecordApp
@@ -8,7 +9,7 @@ namespace TravelRecordApp
         public static string DatabaseLocation = string.Empty;
 
         public static MobileServiceClient MobileServiceClient =
-            new MobileServiceClient("https://travelrecordapp-glareone.azurewebsites.net");
+            new MobileServiceClient("https://travelrecordapp-glareone.azurewebsites.net", new HttpClientHandler());
 
         public App()
         {
