@@ -1,5 +1,6 @@
 ﻿using System.Net.Http;
 using Microsoft.WindowsAzure.MobileServices;
+using TravelRecordApp.Model;
 using Xamarin.Forms;
 
 namespace TravelRecordApp
@@ -10,6 +11,8 @@ namespace TravelRecordApp
 
         public static MobileServiceClient MobileServiceClient =
             new MobileServiceClient("https://travelrecordapp-glareone.azurewebsites.net", new HttpClientHandler());
+
+        public static Users user = new Users();
 
         public App()
         {
