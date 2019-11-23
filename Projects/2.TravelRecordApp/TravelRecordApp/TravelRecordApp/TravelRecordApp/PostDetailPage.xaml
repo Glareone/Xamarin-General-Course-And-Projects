@@ -8,6 +8,11 @@
              x:Class="TravelRecordApp.PostDetailPage">
     <StackLayout>
         <Entry x:Name="ExperienceEntry" />
+        <Label x:Name="VenueLabel" Margin="0, 30, 0, 0" FontAttributes="Bold" FontSize="22"/>
+        <Label x:Name="CategoryLabel" Margin="0, 10, 0, 0" FontSize="15"/>
+        <Label x:Name="AddressLabel" Margin="0, 10, 0, 0" FontSize="15"/>
+        <Label x:Name="CoordinatesLabel" Margin="0, 10, 0, 0" FontSize="15"/>
+        <Label x:Name="DistanceLabel" Margin="0, 10, 0, 0" FontSize="15"/>
         <Button Text="Update" x:Name="UpdateButton" Clicked="UpdateSelectedPost_OnClicked" />
         <Button Text="Delete" x:Name="DeleteButton" Clicked="DeleteSelectedPost_OnClicked" />
     </StackLayout>

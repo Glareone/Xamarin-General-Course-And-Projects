@@ -17,47 +17,31 @@ namespace TravelRecordApp
 
             _selectedPost = selectedPost;
             ExperienceEntry.Text = selectedPost.Experience;
+            VenueLabel.Text = selectedPost.VenueName;
+            CategoryLabel.Text = selectedPost.CategoryName;
+            AddressLabel.Text = selectedPost.Address;
+            CoordinatesLabel.Text = $"lat: {selectedPost.Latitude}, lng: {selectedPost.Longitude}";
+            DistanceLabel.Text = selectedPost.Distance.ToString();
         }
 
-        private void UpdateSelectedPost_OnClicked(object sender, EventArgs e)
+        private async void UpdateSelectedPost_OnClicked(object sender, EventArgs e)
         {
             _selectedPost.Experience = ExperienceEntry.Text;
 
-            using (var connection = new SQLiteConnection(App.DatabaseLocation))
-            {
-                var updatedRowsAmount = connection.Update(_selectedPost);
+            await App.MobileServiceClient.GetTable<Post>().UpdateAsync(_selectedPost);
 
-                if (updatedRowsAmount > 0)
-                {
-                    DisplayAlert("Success", "Experience successfully updated", "Ok");
-                }
+            await DisplayAlert("Success", "Experience successfully updated", "Ok");
 
-                else
-                {
-                    DisplayAlert("Failure", "Experience failed to be updated", "Ok");
-                }
-            }
-
-            Navigation.PopAsync();
+            await Navigation.PopAsync();
         }
 
-        private void DeleteSelectedPost_OnClicked(object sender, EventArgs e)
+        private async void DeleteSelectedPost_OnClicked(object sender, EventArgs e)
         {
-            using (var connection = new SQLiteConnection(App.DatabaseLocation))
-            {
-                var deletedRowsAmount = connection.Delete(_selectedPost);
+            await App.MobileServiceClient.GetTable<Post>().DeleteAsync(_selectedPost);
 
-                if (deletedRowsAmount > 0)
-                {
-                    DisplayAlert("Success", "Experience successfully deleted", "Ok");
-                }
-                else
-                {
-                    DisplayAlert("Failure", "Experience failed to be deleted", "Ok");
-                }
-            }
+            await DisplayAlert("Success", "Experience successfully deleted", "Ok");
 
-            Navigation.PopAsync();
+            await Navigation.PopAsync();
         }
     }
 }

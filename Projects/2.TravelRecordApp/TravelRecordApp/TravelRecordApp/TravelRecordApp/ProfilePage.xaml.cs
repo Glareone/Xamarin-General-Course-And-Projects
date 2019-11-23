@@ -1,5 +1,4 @@
 ﻿using System.Linq;
-using SQLite;
 using TravelRecordApp.Model;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -14,13 +13,11 @@ namespace TravelRecordApp
             InitializeComponent();
         }
 
-        protected override void OnAppearing()
+        protected override async void OnAppearing()
         {
             base.OnAppearing();
 
-            using (var connection = new SQLiteConnection(App.DatabaseLocation))
-            {
-                var postTable = connection.Table<Post>().ToList();
+            var postTable = await App.MobileServiceClient.GetTable<Post>().ToListAsync();
 
                 var postsCategories = (from p in postTable
                         orderby p.CategoryId
@@ -35,7 +32,6 @@ namespace TravelRecordApp
                 categoriesListView.ItemsSource = categoriesWithCount;
 
                 postCountLabel.Text = postTable.Count.ToString();
-            }
         }
     }
 }

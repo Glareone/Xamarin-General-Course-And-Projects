@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Plugin.Geolocator;
 using Plugin.Geolocator.Abstractions;
 using Plugin.Permissions;
 using Plugin.Permissions.Abstractions;
-using SQLite;
 using TravelRecordApp.Model;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
@@ -75,7 +75,8 @@ namespace TravelRecordApp
 
             GetLocation();
 
-            var posts = GetPosts();
+            var posts = await GetPosts();
+
             DisplayOnMap(posts);
         }
 
@@ -125,14 +126,9 @@ namespace TravelRecordApp
             LocationsMap.MoveToRegion(mapSpan);
         }
 
-        private static IEnumerable<Post> GetPosts()
+        private static async Task<IEnumerable<Post>> GetPosts()
         {
-            using (var dbConnection = new SQLiteConnection(App.DatabaseLocation))
-            {
-                dbConnection.CreateTable<Post>();
-
-                return dbConnection.Table<Post>().ToList();
-            }
+            return await App.MobileServiceClient.GetTable<Post>().Where(p => p.UserId == App.User.Id).ToListAsync();
         }
     }
 }

@@ -1,5 +1,4 @@
-﻿using SQLite;
-using TravelRecordApp.Model;
+﻿using TravelRecordApp.Model;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -13,16 +12,11 @@ namespace TravelRecordApp
             InitializeComponent();
         }
 
-        protected override void OnAppearing()
+        protected override async void OnAppearing()
         {
             base.OnAppearing();
 
-            using (var dbConnection = new SQLiteConnection(App.DatabaseLocation))
-            {
-                dbConnection.CreateTable<Post>();
-
-                postListView.ItemsSource = dbConnection.Table<Post>().ToList();
-            }
+            postListView.ItemsSource = await App.MobileServiceClient.GetTable<Post>().Where(p => p.UserId == App.User.Id).ToListAsync();
         }
 
         private void PostListView_OnItemSelected(object sender, SelectedItemChangedEventArgs e)

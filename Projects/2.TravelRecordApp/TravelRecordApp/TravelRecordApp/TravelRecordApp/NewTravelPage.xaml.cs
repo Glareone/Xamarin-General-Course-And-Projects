@@ -17,7 +17,7 @@ namespace TravelRecordApp
             InitializeComponent();
         }
 
-        private void SaveExperience_OnClicked(object sender, EventArgs e)
+        private async void SaveExperience_OnClicked(object sender, EventArgs e)
         {
             try
             {
@@ -33,23 +33,16 @@ namespace TravelRecordApp
                     Distance = selectedVenue?.location?.distance ?? default,
                     Latitude = selectedVenue?.location?.lat ?? default,
                     Longitude = selectedVenue?.location?.lng ?? default,
-                    VenueName = selectedVenue?.name
+                    VenueName = selectedVenue?.name,
+                    UserId = App.User.Id
                 };
 
-                using (var connection = new SQLiteConnection(App.DatabaseLocation))
-                {
-                    connection.CreateTable<Post>();
-
-                    var insertRowsAmount = connection.Insert(post);
-
-                    if (insertRowsAmount > 0)
-                        DisplayAlert("Success", "Experience successfully inserted", "Ok");
-                    else
-                        DisplayAlert("Failure", "Experience failed to be inserted", "Ok");
-                }
+                await App.MobileServiceClient.GetTable<Post>().InsertAsync(post);
+                await DisplayAlert("Success", "Post was saved", "Ok");
             }
-            catch (NullReferenceException ex)
+            catch (Exception)
             {
+                await DisplayAlert("Failure", "Post was not saved properly", "Ok");
             }
         }
 
