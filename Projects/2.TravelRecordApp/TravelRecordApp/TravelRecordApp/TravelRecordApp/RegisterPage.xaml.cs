@@ -32,7 +32,7 @@ namespace TravelRecordApp
                 await App.MobileServiceClient.GetTable<Users>().InsertAsync(user);
                 await Navigation.PushAsync(new HomePage());
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 await DisplayAlert("Error", "Oops! Something goes wrong", "Ok");
             }

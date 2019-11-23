@@ -34,7 +34,7 @@ namespace TravelRecordApp
                     Latitude = selectedVenue?.location?.lat ?? default,
                     Longitude = selectedVenue?.location?.lng ?? default,
                     VenueName = selectedVenue?.name,
-                    UserId = App.user.Id
+                    UserId = App.User.Id
                 };
 
                 await App.MobileServiceClient.GetTable<Post>().InsertAsync(post);

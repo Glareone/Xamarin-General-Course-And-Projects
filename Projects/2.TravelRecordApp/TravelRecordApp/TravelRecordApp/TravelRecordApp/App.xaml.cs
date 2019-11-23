@@ -12,7 +12,7 @@ namespace TravelRecordApp
         public static MobileServiceClient MobileServiceClient =
             new MobileServiceClient("https://travelrecordapp-glareone.azurewebsites.net", new HttpClientHandler());
 
-        public static Users user = new Users();
+        public static Users User = new Users();
 
         public App()
         {
