@@ -10,9 +10,14 @@ namespace TravelRecordApp
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class NewTravelPage : ContentPage
     {
+        Post post;
+
         public NewTravelPage()
         {
             InitializeComponent();
+
+            post = new Post();
+            ContainerStackLayout.BindingContext = post;
         }
 
         private async void SaveExperience_OnClicked(object sender, EventArgs e)

@@ -8,9 +8,17 @@ namespace TravelRecordApp
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RegisterPage : ContentPage
     {
+        Users user;
+
         public RegisterPage()
         {
             InitializeComponent();
+
+            user = new Users();
+
+            // Bind user to StackLayoutContext. After that you could use Two way binding.
+            // And all your props could use {Binding *propName*} declaration.
+            ContainerStackLayout.BindingContext = user;
         }
 
         private async void RegisterButton_Clicked(object sender, EventArgs e)
@@ -20,12 +28,6 @@ namespace TravelRecordApp
                 await DisplayAlert("Error", "Passwords don't match", "Ok");
                 return;
             }
-
-            var user = new Users
-            {
-                Email = EmailEntry.Text,
-                Password = PasswordEntry.Text
-            };
 
             try
             {

@@ -9,64 +9,116 @@ namespace TravelRecordApp.Model
 {
     public class Post: INotifyPropertyChanged
     {
+        private string id;
         public string Id
         {
-            get => Id;
-            set { Id = value; OnPropertyChanged(nameof(Id)); }
+            get => id;
+            set
+            {
+                id = value;
+                OnPropertyChanged(nameof(Id));
+            }
         }
 
+        private string experience;
         public string Experience
         {
-            get => Experience;
-            set { Experience = value; OnPropertyChanged(nameof(Experience)); }
+            get => experience;
+            set
+            {
+                experience = value;
+                OnPropertyChanged(nameof(Experience));
+            }
         }
 
+        private string venueName;
         public string VenueName
         {
-            get => VenueName;
-            set { VenueName = value; OnPropertyChanged(nameof(VenueName)); }
+            get => venueName;
+            set
+            {
+                venueName = value;
+                OnPropertyChanged(nameof(VenueName));
+            }
         }
 
+        private string categoryId;
         public string CategoryId
         {
-            get => CategoryId;
-            set { CategoryId = value; OnPropertyChanged(nameof(CategoryId)); }
+            get => categoryId;
+            set
+            {
+                categoryId = value;
+                OnPropertyChanged(nameof(CategoryId));
+            }
         }
 
+        private string categoryName;
         public string CategoryName
         {
-            get => CategoryName;
-            set { CategoryName = value; OnPropertyChanged(nameof(CategoryName)); }
+            get => categoryName;
+            set
+            {
+                categoryName = value;
+                OnPropertyChanged(nameof(CategoryName));
+            }
         }
 
+        private string address;
         public string Address
         {
-            get => Address;
-            set { Address = value; OnPropertyChanged(nameof(Address)); }
+            get => address;
+            set
+            {
+
+                address = value;
+                OnPropertyChanged(nameof(Address));
+            }
         }
 
+        private double latitude;
         public double Latitude
         {
-            get => Latitude;
-            set { Latitude = value; OnPropertyChanged(nameof(Latitude)); }
+            get => latitude;
+            set
+            {
+                latitude = value;
+                OnPropertyChanged(nameof(Latitude));
+            }
         }
+
+        private double longitude;
 
         public double Longitude
         {
-            get => Longitude;
-            set { Longitude = value; OnPropertyChanged(nameof(Longitude)); }
+            get => longitude;
+            set
+            {
+                longitude = value;
+                OnPropertyChanged(nameof(Latitude));
+            }
         }
 
-        public double Distance
+        private int distance;
+        public int Distance
         {
-            get => Distance;
-            set { Distance = value; OnPropertyChanged(nameof(Distance)); }
+            get => distance;
+            set
+            {
+                distance = value;
+                OnPropertyChanged(nameof(Distance));
+            }
         }
 
+        private string userId;
         public string UserId
         {
-            get => UserId;
-            set { UserId = value; OnPropertyChanged(nameof(UserId)); }
+            get => userId;
+            set
+            {
+                userId = value;
+                OnPropertyChanged(nameof(UserId));
+            }
         }
 
         public static async void Insert(Post post)

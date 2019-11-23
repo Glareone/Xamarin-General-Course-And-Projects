@@ -1,34 +1,33 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
+             xmlns:local="clr-namespace:TravelRecordApp"
              x:Class="TravelRecordApp.MainPage">
 
-    <!-- Resources to use it in color definition or for other purposes. Declared in App -->
-    <StackLayout VerticalOptions="Center" Margin="20">
+    <StackLayout VerticalOptions="Center"
+                 Margin="20">
         <Image x:Name="IconImage"
                Aspect="AspectFit"
                HorizontalOptions="FillAndExpand"
-               Margin="0, 0, 0, 50"
-               HeightRequest="150" />
+               HeightRequest="150"
+               Margin="0, 0, 0, 50"/>
         <Entry x:Name="EmailEntry"
-               Placeholder="Email Address"
-               Keyboard="Email"
-               TextColor="{StaticResource BlueColor}" />
+               Placeholder="Email address"
+               TextColor="{StaticResource BlueColor}"
+               Keyboard="Email"/>
         <Entry x:Name="PasswordEntry"
-               Placeholder="Your Password"
-               IsPassword="True"
-               TextColor="{StaticResource BlueColor}" />
-        <Button Text="LogIn"
-                Margin="0, 50, 0, 0"
-                x:Name="LogIn"
+               Placeholder="Password"
+               TextColor="{StaticResource BlueColor}"
+               IsPassword="True"/>
+        <Button x:Name="LoginButton"
+                Margin="0,50,0,0"
+                Text="Log in"
                 Clicked="LoginButton_Clicked"
-                Style="{StaticResource NormalButton}" />
-        <Button x:Name="NavigateToRegisterPage" Text="Register" HorizontalOptions="End"
-                Clicked="NavigateToRegisterPageButton_Clicked" />
+                Style="{StaticResource NormalButton}"/>
+        <Button x:Name="registerUserButton"
+                Text="Register"
+                HorizontalOptions="End"
+                Clicked="NavigateToRegisterPageButton_Clicked"/>
     </StackLayout>
 
 </ContentPage>

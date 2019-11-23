@@ -8,22 +8,37 @@ namespace TravelRecordApp.Model
 {
     public class Users: INotifyPropertyChanged
     {
+        private string id;
         public string Id
         {
-            get => Id;
-            set { Id = value; OnPropertyChanged(nameof(Id)); }
+            get => id;
+            set
+            {
+                id = value;
+                OnPropertyChanged(nameof(Id));
+            }
         }
 
+        private string email;
         public string Email
         {
-            get => Email;
-            set { Email = value; OnPropertyChanged(nameof(Email)); }
+            get => email;
+            set
+            {
+                email = value;
+                OnPropertyChanged(nameof(Email));
+            }
         }
 
+        private string password;
         public string Password
         {
-            get => Password;
-            set { Password = value; OnPropertyChanged(nameof(Password)); }
+            get => password;
+            set
+            {
+                password = value;
+                OnPropertyChanged(nameof(Password));
+            }
         }
 
         public static async Task<bool> Login(string userEmail, string password)
@@ -36,8 +51,8 @@ namespace TravelRecordApp.Model
                 return false;
             }
 
-            var user = (await App.MobileServiceClient.GetTable<Users>().Where(u => u.Email == password).ToListAsync())
-                .FirstOrDefault();
+            var users = await App.MobileServiceClient.GetTable<Users>().Where(u => u.Email == password).ToListAsync();
+            var user = users.FirstOrDefault();
 
             if (user != null && user.Password == password)
             {
@@ -57,7 +72,7 @@ namespace TravelRecordApp.Model
         public event PropertyChangedEventHandler PropertyChanged;
 
         [NotifyPropertyChangedInvocator]
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        private void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
