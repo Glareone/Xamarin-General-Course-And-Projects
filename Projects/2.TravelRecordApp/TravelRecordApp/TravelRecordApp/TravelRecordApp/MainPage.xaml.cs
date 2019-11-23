@@ -1,6 +1,5 @@
 ﻿using System;
 using System.ComponentModel;
-using System.Linq;
 using TravelRecordApp.Model;
 using Xamarin.Forms;
 
@@ -20,29 +19,15 @@ namespace TravelRecordApp
 
         private async void LoginButton_Clicked(object sender, EventArgs e)
         {
-            
+            var canLogin = await Users.Login(EmailEntry.Text, PasswordEntry.Text);
 
-            var isEmailEmpty = string.IsNullOrEmpty(EmailEntry.Text);
-            var isPasswordEmpty = string.IsNullOrEmpty(PasswordEntry.Text);
-
-            if (isPasswordEmpty || isEmailEmpty)
+            if (canLogin)
             {
+                await Navigation.PushAsync(new HomePage());
             }
             else
             {
-                var user = (await App.MobileServiceClient.GetTable<Users>().Where(u => u.Email == EmailEntry.Text).ToListAsync())
-                    .FirstOrDefault();
-
-                if (user != null && user.Password == PasswordEntry.Text)
-                {
-                    // store user information in App class.
-                    App.User = user;
-                    await Navigation.PushAsync(new HomePage());
-                }
-                else
-                {
-                    await DisplayAlert("Error", "Username or password are incorrect", "Ok");
-                }
+                await DisplayAlert("Error", "Password or Email is incorrect", "Ok");
             }
         }
 

@@ -8,9 +8,17 @@ namespace TravelRecordApp
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RegisterPage : ContentPage
     {
+        Users user;
+
         public RegisterPage()
         {
             InitializeComponent();
+
+            user = new Users();
+
+            // Bind user to StackLayoutContext. After that you could use Two way binding.
+            // And all your props could use {Binding *propName*} declaration.
+            ContainerStackLayout.BindingContext = user;
         }
 
         private async void RegisterButton_Clicked(object sender, EventArgs e)
@@ -21,15 +29,9 @@ namespace TravelRecordApp
                 return;
             }
 
-            var user = new Users
-            {
-                Email = EmailEntry.Text,
-                Password = PasswordEntry.Text
-            };
-
             try
             {
-                await App.MobileServiceClient.GetTable<Users>().InsertAsync(user);
+                await Users.Register(user);
                 await Navigation.PushAsync(new HomePage());
             }
             catch (Exception)

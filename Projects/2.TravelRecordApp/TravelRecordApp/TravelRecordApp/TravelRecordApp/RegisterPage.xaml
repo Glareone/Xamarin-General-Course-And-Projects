@@ -1,28 +1,28 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
              x:Class="TravelRecordApp.RegisterPage">
-    <StackLayout VerticalOptions="Center" Margin="20">
+    <StackLayout x:Name="ContainerStackLayout"
+                 VerticalOptions="Center"
+                 Margin="20">
         <Entry x:Name="EmailEntry"
-               Placeholder="Email Address"
-               Keyboard="Email"
-               TextColor="{StaticResource BlueColor}" />
+               Text="{Binding Email, Mode=TwoWay}"
+               Placeholder="Email address"
+               TextColor="{StaticResource BlueColor}"
+               Keyboard="Email"/>
         <Entry x:Name="PasswordEntry"
-               Placeholder="Your Password"
-               IsPassword="True"
-               TextColor="{StaticResource BlueColor}" />
+               Text="{Binding Password, Mode=TwoWay}"
+               Placeholder="Password"
+               TextColor="{StaticResource BlueColor}"
+               IsPassword="True"/>
         <Entry x:Name="ConfirmPasswordEntry"
-               Placeholder="Confirm Password"
-               IsPassword="True"
-               TextColor="{StaticResource BlueColor}" />
-        <Button Text="Register"
-                Margin="0, 50, 0, 0"
-                x:Name="RegisterButton"
+               Placeholder="Confirm password"
+               TextColor="{StaticResource BlueColor}"
+               IsPassword="True"/>
+        <Button x:Name="RegisterButton"
+                Margin="0,50,0,0"
+                Text="Register"
                 Clicked="RegisterButton_Clicked"
-                Style="{StaticResource NormalButton}" />
+                Style="{StaticResource NormalButton}"/>
     </StackLayout>
 </ContentPage>

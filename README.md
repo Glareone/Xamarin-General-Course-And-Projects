@@ -20,10 +20,11 @@ In VS2019 you cant select between these two types. Only .Net Standard is availab
 </details>
 
 <details>
-<summary>Azure BE Services Configuration:</summary>
+<summary>Azure BE Services Configuration + DBConnection String:</summary>
 
 Important configuration which allows azure service to work with mobile app:
 ![AzureConfig1](Readme-images/Section%2011%20-%20Azure%20BE%20Services%20for%20mobile%20App/Important%20BE%20configuration%20which%20allows%20it%20to%20work%20with%20mobile%20app.png)
+![AzureConfig2](Readme-images/Section%2011%20-%20Azure%20BE%20Services%20for%20mobile%20App/DBConnectionString_Format_And_Name.png)
 
 </details>
 

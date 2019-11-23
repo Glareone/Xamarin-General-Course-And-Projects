@@ -16,7 +16,7 @@ namespace TravelRecordApp
         {
             base.OnAppearing();
 
-            postListView.ItemsSource = await App.MobileServiceClient.GetTable<Post>().Where(p => p.UserId == App.User.Id).ToListAsync();
+            postListView.ItemsSource = await Post.Read();
         }
 
         private void PostListView_OnItemSelected(object sender, SelectedItemChangedEventArgs e)
