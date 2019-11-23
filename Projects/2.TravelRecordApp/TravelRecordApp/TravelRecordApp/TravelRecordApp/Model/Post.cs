@@ -1,31 +1,73 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
-using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
+using TravelRecordApp.Annotations;
 
 namespace TravelRecordApp.Model
 {
-    public class Post
+    public class Post: INotifyPropertyChanged
     {
-        public string Id { get; set; }
+        public string Id
+        {
+            get => Id;
+            set { Id = value; OnPropertyChanged(nameof(Id)); }
+        }
 
-        public string Experience { get; set; }
+        public string Experience
+        {
+            get => Experience;
+            set { Experience = value; OnPropertyChanged(nameof(Experience)); }
+        }
 
-        public string VenueName { get; set; }
+        public string VenueName
+        {
+            get => VenueName;
+            set { VenueName = value; OnPropertyChanged(nameof(VenueName)); }
+        }
 
-        public string CategoryId { get; set; }
+        public string CategoryId
+        {
+            get => CategoryId;
+            set { CategoryId = value; OnPropertyChanged(nameof(CategoryId)); }
+        }
 
-        public string CategoryName { get; set; }
+        public string CategoryName
+        {
+            get => CategoryName;
+            set { CategoryName = value; OnPropertyChanged(nameof(CategoryName)); }
+        }
 
-        public string Address { get; set; }
+        public string Address
+        {
+            get => Address;
+            set { Address = value; OnPropertyChanged(nameof(Address)); }
+        }
 
-        public double Latitude { get; set; }
+        public double Latitude
+        {
+            get => Latitude;
+            set { Latitude = value; OnPropertyChanged(nameof(Latitude)); }
+        }
 
-        public double Longitude { get; set; }
+        public double Longitude
+        {
+            get => Longitude;
+            set { Longitude = value; OnPropertyChanged(nameof(Longitude)); }
+        }
 
-        public int Distance { get; set; }
+        public double Distance
+        {
+            get => Distance;
+            set { Distance = value; OnPropertyChanged(nameof(Distance)); }
+        }
 
-        public string UserId { get; set; }
+        public string UserId
+        {
+            get => UserId;
+            set { UserId = value; OnPropertyChanged(nameof(UserId)); }
+        }
 
         public static async void Insert(Post post)
         {
@@ -50,6 +92,14 @@ namespace TravelRecordApp.Model
             }).ToDictionary(k => k.categoryName, v => v.categoryCount);
 
             return categoriesWithCount;
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        [NotifyPropertyChangedInvocator]
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

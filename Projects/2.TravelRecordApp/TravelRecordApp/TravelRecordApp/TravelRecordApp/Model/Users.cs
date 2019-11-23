@@ -1,15 +1,30 @@
-﻿using System.Linq;
+﻿using System.ComponentModel;
+using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
+using TravelRecordApp.Annotations;
 
 namespace TravelRecordApp.Model
 {
-    public class Users
+    public class Users: INotifyPropertyChanged
     {
-        public string Id { get; set; }
+        public string Id
+        {
+            get => Id;
+            set { Id = value; OnPropertyChanged(nameof(Id)); }
+        }
 
-        public string Email { get; set; }
+        public string Email
+        {
+            get => Email;
+            set { Email = value; OnPropertyChanged(nameof(Email)); }
+        }
 
-        public string Password { get; set; }
+        public string Password
+        {
+            get => Password;
+            set { Password = value; OnPropertyChanged(nameof(Password)); }
+        }
 
         public static async Task<bool> Login(string userEmail, string password)
         {
@@ -37,6 +52,14 @@ namespace TravelRecordApp.Model
         public static async Task Register(Users user)
         {
             await App.MobileServiceClient.GetTable<Users>().InsertAsync(user);
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        [NotifyPropertyChangedInvocator]
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
