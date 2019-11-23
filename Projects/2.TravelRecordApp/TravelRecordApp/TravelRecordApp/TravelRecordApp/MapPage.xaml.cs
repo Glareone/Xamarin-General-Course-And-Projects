@@ -128,7 +128,7 @@ namespace TravelRecordApp
 
         private static async Task<IEnumerable<Post>> GetPosts()
         {
-            return await App.MobileServiceClient.GetTable<Post>().Where(p => p.UserId == App.User.Id).ToListAsync();
+            return await Post.Read();
         }
     }
 }

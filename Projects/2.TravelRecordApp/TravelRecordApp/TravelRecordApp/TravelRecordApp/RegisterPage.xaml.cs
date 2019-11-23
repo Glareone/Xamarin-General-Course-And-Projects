@@ -29,7 +29,7 @@ namespace TravelRecordApp
 
             try
             {
-                await App.MobileServiceClient.GetTable<Users>().InsertAsync(user);
+                await Users.Register(user);
                 await Navigation.PushAsync(new HomePage());
             }
             catch (Exception)
