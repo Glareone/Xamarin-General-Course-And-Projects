@@ -22,10 +22,5 @@ namespace TravelRecordApp
 
             IconImage.Source = ImageSource.FromResource("TravelRecordApp.Assets.Images.plane.png", typeof(MainPage));
         }
-
-        private void NavigateToRegisterPageButton_Clicked(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new RegisterPage());
-        }
     }
 }

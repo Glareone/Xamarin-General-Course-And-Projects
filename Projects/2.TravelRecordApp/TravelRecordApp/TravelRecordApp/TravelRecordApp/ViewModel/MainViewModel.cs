@@ -57,13 +57,16 @@ namespace TravelRecordApp.ViewModel
 
         public LoginCommand LoginCommand { get; set; }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        public RegisterNavigationCommand RegisterNavigationCommand { get; set; }
 
+        public event PropertyChangedEventHandler PropertyChanged;
 
         public MainViewModel()
         {
             User = new Users();
+
             LoginCommand = new LoginCommand(this);
+            RegisterNavigationCommand = new RegisterNavigationCommand(this);
         }
 
         public async void Login()
@@ -78,6 +81,11 @@ namespace TravelRecordApp.ViewModel
             {
                 await App.Current.MainPage.DisplayAlert("Error", "Password or Email is incorrect", "Ok");
             }
+        }
+
+        public async void Navigate()
+        {
+            await App.Current.MainPage.Navigation.PushAsync(new RegisterPage());
         }
 
         [NotifyPropertyChangedInvocator]
