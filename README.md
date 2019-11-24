@@ -41,6 +41,18 @@ ICommand:
 
 </details>
 
+<details>
+<summary>MVVM Materials: IValueConverter</summary>
+
+ICommand:
+![ICommand1](Readme-images/Section%2012%20-%20IValueConverter/Image%20-%201.png)
+![ICommand1](Readme-images/Section%2012%20-%20IValueConverter/Image%20-%202.png)
+![ICommand1](Readme-images/Section%2012%20-%20IValueConverter/Image%20-%203.png)
+![ICommand1](Readme-images/Section%2012%20-%20IValueConverter/Image%20-%204.png)
+![ICommand1](Readme-images/Section%2012%20-%20IValueConverter/Image%20-%205.png)
+
+</details>
+
 ### Useful links:
 
 Icon generator:

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -152,6 +153,18 @@ namespace TravelRecordApp.Model
                 UserId = App.User.Id;
 
                 OnPropertyChanged(nameof(Venue));
+            }
+        }
+
+        private DateTimeOffset createdAt;
+
+        public DateTimeOffset CREATEDAT
+        {
+            get => createdAt;
+            set
+            {
+                createdAt = value;
+                OnPropertyChanged(nameof(CREATEDAT));
             }
         }
 
