@@ -3,13 +3,15 @@ using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 using TravelRecordApp.Annotations;
 
 namespace TravelRecordApp.Model
 {
-    public class Post: INotifyPropertyChanged
+    public class Post : INotifyPropertyChanged
     {
         private string id;
+
         public string Id
         {
             get => id;
@@ -21,6 +23,7 @@ namespace TravelRecordApp.Model
         }
 
         private string experience;
+
         public string Experience
         {
             get => experience;
@@ -32,6 +35,7 @@ namespace TravelRecordApp.Model
         }
 
         private string venueName;
+
         public string VenueName
         {
             get => venueName;
@@ -43,6 +47,7 @@ namespace TravelRecordApp.Model
         }
 
         private string categoryId;
+
         public string CategoryId
         {
             get => categoryId;
@@ -54,6 +59,7 @@ namespace TravelRecordApp.Model
         }
 
         private string categoryName;
+
         public string CategoryName
         {
             get => categoryName;
@@ -65,18 +71,19 @@ namespace TravelRecordApp.Model
         }
 
         private string address;
+
         public string Address
         {
             get => address;
             set
             {
-
                 address = value;
                 OnPropertyChanged(nameof(Address));
             }
         }
 
         private double latitude;
+
         public double Latitude
         {
             get => latitude;
@@ -100,6 +107,7 @@ namespace TravelRecordApp.Model
         }
 
         private int distance;
+
         public int Distance
         {
             get => distance;
@@ -111,6 +119,7 @@ namespace TravelRecordApp.Model
         }
 
         private string userId;
+
         public string UserId
         {
             get => userId;
@@ -120,6 +129,32 @@ namespace TravelRecordApp.Model
                 OnPropertyChanged(nameof(UserId));
             }
         }
+
+        private Venue venue;
+
+        [JsonIgnore]
+        public Venue Venue
+        {
+            get => venue;
+            set
+            {
+                venue = value;
+
+                var firstCategory = venue?.categories?.FirstOrDefault();
+
+                CategoryId = firstCategory?.id;
+                CategoryName = firstCategory?.name;
+                Address = venue?.location?.address;
+                Distance = venue?.location?.distance ?? default;
+                Latitude = venue?.location?.lat ?? default;
+                Longitude = venue?.location?.lng ?? default;
+                VenueName = venue?.name;
+                UserId = App.User.Id;
+
+                OnPropertyChanged(nameof(Venue));
+            }
+        }
+
 
         public static async void Insert(Post post)
         {
@@ -134,7 +169,7 @@ namespace TravelRecordApp.Model
         public static Dictionary<string, int> PostedCategories(List<Post> posts)
         {
             var postsCategories = (from p in posts
-                                   orderby p.CategoryId
+                orderby p.CategoryId
                 select p.CategoryName).Distinct().ToList();
 
             var categoriesWithCount = postsCategories.Select(category => new

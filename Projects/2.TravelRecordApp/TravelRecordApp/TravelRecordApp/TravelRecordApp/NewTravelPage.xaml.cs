@@ -1,7 +1,6 @@
-﻿using System;
-using System.Linq;
-using Plugin.Geolocator;
+﻿using Plugin.Geolocator;
 using TravelRecordApp.Model;
+using TravelRecordApp.ViewModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,43 +9,14 @@ namespace TravelRecordApp
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class NewTravelPage : ContentPage
     {
-        Post post;
+        public NewTravelViewModel NewTravelViewModel { get; set; }
 
         public NewTravelPage()
         {
             InitializeComponent();
 
-            post = new Post();
-            ContainerStackLayout.BindingContext = post;
-        }
-
-        private async void SaveExperience_OnClicked(object sender, EventArgs e)
-        {
-            try
-            {
-                var selectedVenue = venueListView.SelectedItem as Venue;
-                var firstCategory = selectedVenue?.categories.FirstOrDefault();
-
-                var post = new Post
-                {
-                    Experience = ExperienceEntry.Text,
-                    CategoryId = firstCategory?.id,
-                    CategoryName = firstCategory?.name,
-                    Address = selectedVenue?.location.address,
-                    Distance = selectedVenue?.location?.distance ?? default,
-                    Latitude = selectedVenue?.location?.lat ?? default,
-                    Longitude = selectedVenue?.location?.lng ?? default,
-                    VenueName = selectedVenue?.name,
-                    UserId = App.User.Id
-                };
-
-                Post.Insert(post);
-                await DisplayAlert("Success", "Post was saved", "Ok");
-            }
-            catch (Exception)
-            {
-                await DisplayAlert("Failure", "Post was not saved properly", "Ok");
-            }
+            NewTravelViewModel = new NewTravelViewModel();
+            BindingContext = NewTravelViewModel;
         }
 
         protected override async void OnAppearing()
