@@ -13,6 +13,7 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ListView x:Name="postListView"
+              ItemsSource="{Binding Posts}"
               ItemSelected="PostListView_OnItemSelected">
         <ListView.ItemTemplate>
             <DataTemplate>

@@ -9,14 +9,14 @@ namespace TravelRecordApp
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class NewTravelPage : ContentPage
     {
-        public NewTravelViewModel NewTravelViewModel { get; set; }
+        private NewTravelViewModel _newTravelViewModel;
 
         public NewTravelPage()
         {
             InitializeComponent();
 
-            NewTravelViewModel = new NewTravelViewModel();
-            BindingContext = NewTravelViewModel;
+            _newTravelViewModel = new NewTravelViewModel();
+            BindingContext = _newTravelViewModel;
         }
 
         protected override async void OnAppearing()
