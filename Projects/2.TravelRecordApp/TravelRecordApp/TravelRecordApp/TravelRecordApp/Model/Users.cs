@@ -41,6 +41,17 @@ namespace TravelRecordApp.Model
             }
         }
 
+        private string confirmPassword;
+        public string ConfirmPassword
+        {
+            get => confirmPassword;
+            set
+            {
+                confirmPassword = value;
+                OnPropertyChanged(nameof(ConfirmPassword));
+            }
+        }
+
         public static async Task<bool> Login(string userEmail, string password)
         {
             var isEmailEmpty = string.IsNullOrEmpty(userEmail);

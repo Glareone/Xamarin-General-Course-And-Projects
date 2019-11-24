@@ -11,14 +11,14 @@ namespace TravelRecordApp
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
-        private MainViewModel mainViewModel;
+        private MainViewModel _mainViewModel;
 
         public MainPage()
         {
             InitializeComponent();
 
-            mainViewModel = new MainViewModel();
-            BindingContext = mainViewModel;
+            _mainViewModel = new MainViewModel();
+            BindingContext = _mainViewModel;
 
             IconImage.Source = ImageSource.FromResource("TravelRecordApp.Assets.Images.plane.png", typeof(MainPage));
         }
