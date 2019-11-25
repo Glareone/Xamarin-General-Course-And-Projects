@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using TravelRecordApp.Model;
+using TravelRecordApp.ViewModel;
 using Xamarin.Forms;
 
 namespace TravelRecordApp
@@ -10,30 +11,16 @@ namespace TravelRecordApp
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
+        private MainViewModel _mainViewModel;
+
         public MainPage()
         {
             InitializeComponent();
 
+            _mainViewModel = new MainViewModel();
+            BindingContext = _mainViewModel;
+
             IconImage.Source = ImageSource.FromResource("TravelRecordApp.Assets.Images.plane.png", typeof(MainPage));
-        }
-
-        private async void LoginButton_Clicked(object sender, EventArgs e)
-        {
-            var canLogin = await Users.Login(EmailEntry.Text, PasswordEntry.Text);
-
-            if (canLogin)
-            {
-                await Navigation.PushAsync(new HomePage());
-            }
-            else
-            {
-                await DisplayAlert("Error", "Password or Email is incorrect", "Ok");
-            }
-        }
-
-        private void NavigateToRegisterPageButton_Clicked(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new RegisterPage());
         }
     }
 }

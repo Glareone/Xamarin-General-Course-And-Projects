@@ -11,7 +11,7 @@
     <TabbedPage.ToolbarItems>
         <ToolbarItem Text="Add"
                      Icon="add.png"
-                     Clicked="ToolbarItem_OnClicked" />
+                     Command="{Binding NavigationCommand}" />
     </TabbedPage.ToolbarItems>
     <local:HistoryPage Title="History"
                        Icon="home.png" />
