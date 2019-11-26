@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
+using Microsoft.WindowsAzure.MobileServices;
 using Newtonsoft.Json;
 using TravelRecordApp.Annotations;
 
@@ -171,12 +172,28 @@ namespace TravelRecordApp.Model
 
         public static async void Insert(Post post)
         {
-            await App.MobileServiceClient.GetTable<Post>().InsertAsync(post);
+            // how to perform our work without local-cloud sync.
+            // await App.MobileServiceClient.GetTable<Post>().InsertAsync(post);
+
+            await App.postsTable.InsertAsync(post);
+            await App.MobileServiceClient.SyncContext.PushAsync();
+        }
+
+        public static async Task Delete(Post post)
+        {
+            // how to perform our work without local-cloud sync.
+            // await App.MobileServiceClient.GetTable<Post>().DeleteAsync(post);
+
+            await App.postsTable.DeleteAsync(post);
+            await App.MobileServiceClient.SyncContext.PushAsync();
         }
 
         public static async Task<IEnumerable<Post>> Read()
         {
-            return await App.MobileServiceClient.GetTable<Post>().Where(p => p.UserId == App.User.Id).ToListAsync();
+            // how to perform our work without local-cloud sync.
+            //return await App.MobileServiceClient.GetTable<Post>().Where(p => p.UserId == App.User.Id).ToListAsync();
+
+            return await App.postsTable.Where(p => p.UserId == App.User.Id).ToListAsync();
         }
 
         public static Dictionary<string, int> PostedCategories(List<Post> posts)
