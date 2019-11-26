@@ -174,6 +174,11 @@ namespace TravelRecordApp.Model
             await App.MobileServiceClient.GetTable<Post>().InsertAsync(post);
         }
 
+        public static async Task Delete(Post post)
+        {
+            await App.MobileServiceClient.GetTable<Post>().DeleteAsync(post);
+        }
+
         public static async Task<IEnumerable<Post>> Read()
         {
             return await App.MobileServiceClient.GetTable<Post>().Where(p => p.UserId == App.User.Id).ToListAsync();

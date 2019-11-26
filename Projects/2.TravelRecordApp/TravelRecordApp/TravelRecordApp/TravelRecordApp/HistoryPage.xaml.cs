@@ -1,4 +1,5 @@
-﻿using TravelRecordApp.Model;
+﻿using System;
+using TravelRecordApp.Model;
 using TravelRecordApp.ViewModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -28,6 +29,20 @@ namespace TravelRecordApp
         private void PostListView_OnItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             if (postListView.SelectedItem is Post selectedPost) Navigation.PushAsync(new PostDetailPage(selectedPost));
+        }
+
+        private async void Experience_MenuItem_OnDelete(object sender, EventArgs e)
+        {
+            var selectedPost = (Post)((MenuItem) sender).CommandParameter;
+            await _historyViewModel.DeletePost(selectedPost);
+
+            await _historyViewModel.UpdatePosts();
+        }
+
+        private async void PostListView_OnRefreshing(object sender, EventArgs e)
+        {
+            await _historyViewModel.UpdatePosts();
+            postListView.IsRefreshing = false; // the refreshing is done.
         }
     }
 }

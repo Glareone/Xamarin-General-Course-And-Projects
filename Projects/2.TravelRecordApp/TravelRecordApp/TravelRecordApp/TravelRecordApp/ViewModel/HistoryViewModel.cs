@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Text;
+﻿using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using TravelRecordApp.Model;
 
@@ -25,6 +22,11 @@ namespace TravelRecordApp.ViewModel
             {
                 Posts.Add(post);
             }
+        }
+
+        public async Task DeletePost(Post postToDelete)
+        {
+            await Post.Delete(postToDelete);
         }
     }
 }
