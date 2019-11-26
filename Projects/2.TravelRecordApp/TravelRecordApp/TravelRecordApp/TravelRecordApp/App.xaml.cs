@@ -1,5 +1,7 @@
 ﻿using System.Net.Http;
 using Microsoft.WindowsAzure.MobileServices;
+using Microsoft.WindowsAzure.MobileServices.SQLiteStore;
+using Microsoft.WindowsAzure.MobileServices.Sync;
 using TravelRecordApp.Model;
 using Xamarin.Forms;
 
@@ -11,6 +13,8 @@ namespace TravelRecordApp
 
         public static MobileServiceClient MobileServiceClient =
             new MobileServiceClient("https://travelrecordapp-glareone.azurewebsites.net", new HttpClientHandler());
+
+        public static IMobileServiceSyncTable<Post> postsTable;
 
         public static Users User = new Users();
 
@@ -27,6 +31,15 @@ namespace TravelRecordApp
             InitializeComponent();
 
             MainPage = new NavigationPage(new MainPage());
+
+            // To use both storages simultaneously - offline and online.
+            var combinationWithOnlineAndOfflineSqliteStore = new MobileServiceSQLiteStore(databaseLocation);
+            // what should be syncing
+            combinationWithOnlineAndOfflineSqliteStore.DefineTable<Post>();
+            // how should be syncing
+            MobileServiceClient.SyncContext.InitializeAsync(combinationWithOnlineAndOfflineSqliteStore);
+
+            postsTable = MobileServiceClient.GetSyncTable<Post>();
         }
 
         protected override void OnStart()

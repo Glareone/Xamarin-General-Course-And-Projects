@@ -19,6 +19,20 @@
           "lib/netstandard1.4/Microsoft.Azure.Mobile.Client.dll": {}
         }
       },
+      "Microsoft.Azure.Mobile.Client.SQLiteStore/4.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Azure.Mobile.Client": "4.1.1",
+          "NETStandard.Library": "1.6.1",
+          "SQLitePCLRaw.bundle_green": "1.1.2"
+        },
+        "compile": {
+          "lib/netstandard1.4/Microsoft.Azure.Mobile.Client.SQLiteStore.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.4/Microsoft.Azure.Mobile.Client.SQLiteStore.dll": {}
+        }
+      },
       "Microsoft.NETCore.Platforms/1.1.0": {
         "type": "package",
         "compile": {
@@ -794,6 +808,23 @@
         "lib/xamarinios10/Microsoft.Azure.Mobile.Client.xml",
         "microsoft.azure.mobile.client.4.1.1.nupkg.sha512",
         "microsoft.azure.mobile.client.nuspec"
+      ]
+    },
+    "Microsoft.Azure.Mobile.Client.SQLiteStore/4.1.1": {
+      "sha512": "fe/5S/INPZYy79loBbH5RPA2bHOjDa7trwqrvRrkl70i9wrHlmLypai1goGNb9UaeC3QM/wu35s9qxLk+qYb4Q==",
+      "type": "package",
+      "path": "microsoft.azure.mobile.client.sqlitestore/4.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/Microsoft.Azure.Mobile.Client.SQLiteStore.dll",
+        "lib/net45/Microsoft.Azure.Mobile.Client.SQLiteStore.xml",
+        "lib/netstandard1.4/Microsoft.Azure.Mobile.Client.SQLiteStore.dll",
+        "lib/netstandard1.4/Microsoft.Azure.Mobile.Client.SQLiteStore.xml",
+        "lib/portable-net45+win8+wp8+wpa81/Microsoft.Azure.Mobile.Client.SQLiteStore.dll",
+        "lib/portable-net45+win8+wp8+wpa81/Microsoft.Azure.Mobile.Client.SQLiteStore.xml",
+        "microsoft.azure.mobile.client.sqlitestore.4.1.1.nupkg.sha512",
+        "microsoft.azure.mobile.client.sqlitestore.nuspec"
       ]
     },
     "Microsoft.NETCore.Platforms/1.1.0": {
@@ -3551,6 +3582,7 @@
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
       "Microsoft.Azure.Mobile.Client >= 4.1.1",
+      "Microsoft.Azure.Mobile.Client.SQLiteStore >= 4.1.1",
       "NETStandard.Library >= 2.0.3",
       "Newtonsoft.Json >= 12.0.3",
       "Plugin.Permissions >= 3.0.0.12",
@@ -3606,6 +3638,10 @@
       "netstandard2.0": {
         "dependencies": {
           "Microsoft.Azure.Mobile.Client": {
+            "target": "Package",
+            "version": "[4.1.1, )"
+          },
+          "Microsoft.Azure.Mobile.Client.SQLiteStore": {
             "target": "Package",
             "version": "[4.1.1, )"
           },

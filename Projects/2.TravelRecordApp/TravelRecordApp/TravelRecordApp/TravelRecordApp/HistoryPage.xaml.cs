@@ -1,4 +1,5 @@
 ﻿using System;
+using TravelRecordApp.Helpers;
 using TravelRecordApp.Model;
 using TravelRecordApp.ViewModel;
 using Xamarin.Forms;
@@ -24,6 +25,9 @@ namespace TravelRecordApp
             base.OnAppearing();
 
             await _historyViewModel.UpdatePosts();
+
+            // synchronize local db and cloud db
+            await AzureAppServiceHelper.SyncAsync();
         }
 
         private void PostListView_OnItemSelected(object sender, SelectedItemChangedEventArgs e)
@@ -42,7 +46,13 @@ namespace TravelRecordApp
         private async void PostListView_OnRefreshing(object sender, EventArgs e)
         {
             await _historyViewModel.UpdatePosts();
-            postListView.IsRefreshing = false; // the refreshing is done.
+
+            // synchronize local db and cloud db
+            // we should add it here because we want to update elements if anyone was changes while we were offline.
+            await AzureAppServiceHelper.SyncAsync();
+
+            // the refreshing is done.
+            postListView.IsRefreshing = false; 
         }
     }
 }
