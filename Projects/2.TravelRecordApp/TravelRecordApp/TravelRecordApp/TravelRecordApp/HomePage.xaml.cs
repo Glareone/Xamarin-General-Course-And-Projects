@@ -1,5 +1,4 @@
-﻿using System;
-using TravelRecordApp.ViewModel;
+﻿using TravelRecordApp.ViewModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -8,7 +7,7 @@ namespace TravelRecordApp
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class HomePage : TabbedPage
     {
-        private HomeViewModel _viewModel;
+        private readonly HomeViewModel _viewModel;
 
         public HomePage()
         {

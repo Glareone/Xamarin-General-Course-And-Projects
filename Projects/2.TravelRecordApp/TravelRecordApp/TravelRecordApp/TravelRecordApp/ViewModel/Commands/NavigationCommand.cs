@@ -3,16 +3,16 @@ using System.Windows.Input;
 
 namespace TravelRecordApp.ViewModel.Commands
 {
-    public class NavigationCommand: ICommand
+    public class NavigationCommand : ICommand
     {
-        public HomeViewModel HomeViewModel { get; set; }
-
-        public event EventHandler CanExecuteChanged;
-
         public NavigationCommand(HomeViewModel homeViewModel)
         {
             HomeViewModel = homeViewModel;
         }
+
+        public HomeViewModel HomeViewModel { get; set; }
+
+        public event EventHandler CanExecuteChanged;
 
         public bool CanExecute(object parameter)
         {
@@ -23,7 +23,5 @@ namespace TravelRecordApp.ViewModel.Commands
         {
             HomeViewModel.Navigate();
         }
-
-        
     }
 }

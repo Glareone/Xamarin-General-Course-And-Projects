@@ -7,7 +7,7 @@ namespace TravelRecordApp
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RegisterPage : ContentPage
     {
-        private RegisterViewModel _registerViewModel;
+        private readonly RegisterViewModel _registerViewModel;
 
         public RegisterPage()
         {

@@ -4,16 +4,16 @@ using TravelRecordApp.Model;
 
 namespace TravelRecordApp.ViewModel.Commands
 {
-    public class RegisterCommand: ICommand
+    public class RegisterCommand : ICommand
     {
-        public RegisterViewModel RegisterViewModel { get; set; }
-
-        public event EventHandler CanExecuteChanged;
-
         public RegisterCommand(RegisterViewModel registerViewModel)
         {
             RegisterViewModel = registerViewModel;
         }
+
+        public RegisterViewModel RegisterViewModel { get; set; }
+
+        public event EventHandler CanExecuteChanged;
 
         public bool CanExecute(object parameter)
         {
@@ -21,9 +21,7 @@ namespace TravelRecordApp.ViewModel.Commands
 
             if (user == null || string.IsNullOrEmpty(user.Email) || string.IsNullOrEmpty(user.Password) ||
                 user.Password != user.ConfirmPassword)
-            {
                 return false;
-            }
 
             return true;
         }

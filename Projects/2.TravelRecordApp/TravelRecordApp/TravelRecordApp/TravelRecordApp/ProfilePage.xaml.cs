@@ -17,7 +17,7 @@ namespace TravelRecordApp
         {
             base.OnAppearing();
 
-            var posts = (List<Post>)await Post.Read();
+            var posts = (List<Post>) await Post.Read();
 
             var categoriesWithCount = Post.PostedCategories(posts);
 

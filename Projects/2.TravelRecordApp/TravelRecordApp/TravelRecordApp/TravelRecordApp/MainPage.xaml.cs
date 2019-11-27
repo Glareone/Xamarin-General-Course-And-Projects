@@ -1,6 +1,4 @@
-﻿using System;
-using System.ComponentModel;
-using TravelRecordApp.Model;
+﻿using System.ComponentModel;
 using TravelRecordApp.ViewModel;
 using Xamarin.Forms;
 
@@ -11,7 +9,7 @@ namespace TravelRecordApp
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
-        private MainViewModel _mainViewModel;
+        private readonly MainViewModel _mainViewModel;
 
         public MainPage()
         {

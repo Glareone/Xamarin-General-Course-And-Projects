@@ -112,6 +112,9 @@
     </ImageAsset>
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Plugin.CurrentActivity">
+      <HintPath>C:\Users\enlar\.nuget\packages\plugin.currentactivity\2.1.0.2\lib\monoandroid44\Plugin.CurrentActivity.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />

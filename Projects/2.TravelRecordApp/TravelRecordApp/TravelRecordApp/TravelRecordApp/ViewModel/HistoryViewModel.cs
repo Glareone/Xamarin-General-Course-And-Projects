@@ -6,22 +6,19 @@ namespace TravelRecordApp.ViewModel
 {
     public class HistoryViewModel
     {
-        public ObservableCollection<Post> Posts { get; set; }
-
         public HistoryViewModel()
         {
             Posts = new ObservableCollection<Post>();
         }
+
+        public ObservableCollection<Post> Posts { get; set; }
 
         public async Task UpdatePosts()
         {
             var posts = await Post.Read();
 
             Posts.Clear();
-            foreach (var post in posts)
-            {
-                Posts.Add(post);
-            }
+            foreach (var post in posts) Posts.Add(post);
         }
 
         public async Task DeletePost(Post postToDelete)

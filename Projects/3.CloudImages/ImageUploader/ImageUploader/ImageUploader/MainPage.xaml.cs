@@ -1,7 +1,7 @@
-﻿using System;
-using System.ComponentModel;
-using Plugin.Media;
+﻿using Plugin.Media;
 using Plugin.Media.Abstractions;
+using System;
+using System.ComponentModel;
 using Xamarin.Forms;
 
 namespace ImageUploader

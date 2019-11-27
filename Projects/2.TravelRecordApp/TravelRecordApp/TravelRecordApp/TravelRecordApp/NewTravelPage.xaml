@@ -1,4 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
+
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TravelRecordApp.NewTravelPage">
@@ -7,36 +8,36 @@
         <ToolbarItem Text="Save"
                      Icon="save.png"
                      Command="{Binding PostCommand}"
-                     CommandParameter="{Binding Post}"/>
+                     CommandParameter="{Binding Post}" />
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
         <StackLayout x:Name="CointainerStackLayout">
             <Entry x:Name="ExperienceEntry"
                    Text="{Binding Experience, Mode=TwoWay}"
-                   Placeholder="Write your experience"/>
-            <ListView  x:Name="venueListView"
-                       SelectedItem="{Binding Venue, Mode=TwoWay}"
-                       Margin="20, 0"
-                       HorizontalOptions="FillAndExpand">
+                   Placeholder="Write your experience" />
+            <ListView x:Name="venueListView"
+                      SelectedItem="{Binding Venue, Mode=TwoWay}"
+                      Margin="20, 0"
+                      HorizontalOptions="FillAndExpand">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <Grid>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
                                 </Grid.ColumnDefinitions>
                                 <Grid.RowDefinitions>
-                                    <RowDefinition Height="*"/>
-                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
                                 </Grid.RowDefinitions>
 
                                 <Label Text="{Binding name}"
-                                       FontAttributes="Bold"/>
+                                       FontAttributes="Bold" />
                                 <Label Grid.Row="1"
                                        TextColor="DodgerBlue"
-                                       Text="{Binding location.address}"/>
+                                       Text="{Binding location.address}" />
                                 <Label Grid.Column="1"
                                        Text="{Binding location.distance, StringFormat='{0} meters'}" />
                             </Grid>
