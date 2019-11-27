@@ -4,25 +4,22 @@ using TravelRecordApp.Model;
 
 namespace TravelRecordApp.ViewModel.Commands
 {
-    public class LoginCommand: ICommand
+    public class LoginCommand : ICommand
     {
-        public MainViewModel MainViewModel { get; set; }
-
-        public event EventHandler CanExecuteChanged;
-
         public LoginCommand(MainViewModel mainViewModel)
         {
             MainViewModel = mainViewModel;
         }
 
+        public MainViewModel MainViewModel { get; set; }
+
+        public event EventHandler CanExecuteChanged;
+
         public bool CanExecute(object parameter)
         {
             var user = (Users) parameter;
 
-            if (user == null || string.IsNullOrEmpty(user.Email) || string.IsNullOrEmpty(user.Password))
-            {
-                return false;
-            }
+            if (user == null || string.IsNullOrEmpty(user.Email) || string.IsNullOrEmpty(user.Password)) return false;
 
             return true;
         }
@@ -31,7 +28,5 @@ namespace TravelRecordApp.ViewModel.Commands
         {
             MainViewModel.Login();
         }
-
-
     }
 }

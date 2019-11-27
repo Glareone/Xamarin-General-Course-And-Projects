@@ -1,4 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
+
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:TravelRecordApp"
@@ -11,27 +12,27 @@
                Aspect="AspectFit"
                HorizontalOptions="FillAndExpand"
                HeightRequest="150"
-               Margin="0, 0, 0, 50"/>
+               Margin="0, 0, 0, 50" />
         <Entry x:Name="EmailEntry"
                Text="{Binding Email, Mode=TwoWay}"
                Placeholder="Email address"
                TextColor="{StaticResource BlueColor}"
-               Keyboard="Email"/>
+               Keyboard="Email" />
         <Entry x:Name="PasswordEntry"
                Text="{Binding Password, Mode=TwoWay}"
                Placeholder="Password"
                TextColor="{StaticResource BlueColor}"
-               IsPassword="True"/>
+               IsPassword="True" />
         <Button x:Name="LoginButton"
                 Margin="0,50,0,0"
                 Text="Log in"
                 Command="{Binding LoginCommand}"
                 CommandParameter="{Binding User}"
-                Style="{StaticResource NormalButton}"/>
+                Style="{StaticResource NormalButton}" />
         <Button x:Name="registerUserButton"
                 Text="Register"
                 HorizontalOptions="End"
-                Command="{Binding RegisterNavigationCommand}"/>
+                Command="{Binding RegisterNavigationCommand}" />
     </StackLayout>
 
 </ContentPage>

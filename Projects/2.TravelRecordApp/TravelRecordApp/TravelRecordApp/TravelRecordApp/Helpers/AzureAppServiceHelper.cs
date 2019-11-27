@@ -25,34 +25,24 @@ namespace TravelRecordApp.Helpers
             }
             catch (MobileServicePushFailedException mspfe)
             {
-                if (mspfe.PushResult != null)
-                {
-                    syncErrors = mspfe.PushResult.Errors;
-                }
+                if (mspfe.PushResult != null) syncErrors = mspfe.PushResult.Errors;
             }
             catch (Exception ex)
             {
             }
 
-            
+
             if (syncErrors != null)
-            {
-                
                 foreach (var mobileServiceTableOperationError in syncErrors)
-                {
-                    if (mobileServiceTableOperationError.OperationKind == MobileServiceTableOperationKind.Update && mobileServiceTableOperationError.Result != null)
-                    {
+                    if (mobileServiceTableOperationError.OperationKind == MobileServiceTableOperationKind.Update &&
+                        mobileServiceTableOperationError.Result != null)
                         // revert changes in the server's db copy.
-                        await mobileServiceTableOperationError.CancelAndUpdateItemAsync(mobileServiceTableOperationError.Result);
-                    }
+                        await mobileServiceTableOperationError.CancelAndUpdateItemAsync(mobileServiceTableOperationError
+                            .Result);
                     else
-                    {
                         // revert changes in local db (if error type differs from Update)
                         // for situation which something is not presented in a cloud and shouldn't be in sqlite
                         await mobileServiceTableOperationError.CancelAndDiscardItemAsync();
-                    }
-                }
-            }
         }
     }
 }

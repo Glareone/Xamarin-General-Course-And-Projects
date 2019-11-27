@@ -28,9 +28,9 @@ namespace TravelRecordApp.ViewModel
                 email = value;
                 User = new Users
                 {
-                    Email = this.Email,
-                    Password = this.Password,
-                    ConfirmPassword = this.ConfirmPassword
+                    Email = Email,
+                    Password = Password,
+                    ConfirmPassword = ConfirmPassword
                 };
                 OnPropertyChanged(nameof(Email));
             }
@@ -45,9 +45,9 @@ namespace TravelRecordApp.ViewModel
                 password = value;
                 User = new Users
                 {
-                    Email = this.Email,
-                    Password = this.Password,
-                    ConfirmPassword = this.ConfirmPassword
+                    Email = Email,
+                    Password = Password,
+                    ConfirmPassword = ConfirmPassword
                 };
                 OnPropertyChanged(nameof(Password));
             }
@@ -62,9 +62,9 @@ namespace TravelRecordApp.ViewModel
                 confirmPassword = value;
                 User = new Users
                 {
-                    Email = this.Email,
-                    Password = this.Password,
-                    ConfirmPassword = this.ConfirmPassword
+                    Email = Email,
+                    Password = Password,
+                    ConfirmPassword = ConfirmPassword
                 };
                 OnPropertyChanged(nameof(ConfirmPassword));
             }

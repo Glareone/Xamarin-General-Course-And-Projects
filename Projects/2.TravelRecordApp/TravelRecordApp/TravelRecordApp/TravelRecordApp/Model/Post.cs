@@ -13,7 +13,6 @@ namespace TravelRecordApp.Model
     public class Post : INotifyPropertyChanged
     {
         private string id;
-
         public string Id
         {
             get => id;
@@ -25,7 +24,6 @@ namespace TravelRecordApp.Model
         }
 
         private string experience;
-
         public string Experience
         {
             get => experience;
@@ -37,7 +35,6 @@ namespace TravelRecordApp.Model
         }
 
         private string venueName;
-
         public string VenueName
         {
             get => venueName;
@@ -49,7 +46,6 @@ namespace TravelRecordApp.Model
         }
 
         private string categoryId;
-
         public string CategoryId
         {
             get => categoryId;
@@ -61,7 +57,6 @@ namespace TravelRecordApp.Model
         }
 
         private string categoryName;
-
         public string CategoryName
         {
             get => categoryName;
@@ -73,7 +68,6 @@ namespace TravelRecordApp.Model
         }
 
         private string address;
-
         public string Address
         {
             get => address;
@@ -85,7 +79,6 @@ namespace TravelRecordApp.Model
         }
 
         private double latitude;
-
         public double Latitude
         {
             get => latitude;
@@ -97,7 +90,6 @@ namespace TravelRecordApp.Model
         }
 
         private double longitude;
-
         public double Longitude
         {
             get => longitude;
@@ -109,7 +101,6 @@ namespace TravelRecordApp.Model
         }
 
         private int distance;
-
         public int Distance
         {
             get => distance;
@@ -121,7 +112,6 @@ namespace TravelRecordApp.Model
         }
 
         private string userId;
-
         public string UserId
         {
             get => userId;
@@ -168,7 +158,6 @@ namespace TravelRecordApp.Model
                 OnPropertyChanged(nameof(CREATEDAT));
             }
         }
-
 
         public static async void Insert(Post post)
         {

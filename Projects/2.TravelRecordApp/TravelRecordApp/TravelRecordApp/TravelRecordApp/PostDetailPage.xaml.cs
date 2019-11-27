@@ -1,5 +1,4 @@
 ﻿using System;
-using SQLite;
 using TravelRecordApp.Model;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;

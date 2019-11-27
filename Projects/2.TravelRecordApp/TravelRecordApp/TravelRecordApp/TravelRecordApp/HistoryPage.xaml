@@ -20,14 +20,13 @@
         <ListView.ItemTemplate>
             <DataTemplate>
                 <TextCell Text="{Binding Experience}"
-                          Detail="{Binding CREATEDAT, Converter={StaticResource converter}}"
-                          >
+                          Detail="{Binding CREATEDAT, Converter={StaticResource converter}}">
                     <TextCell.ContextActions>
-                        <MenuItem 
-                            Text="Delete" 
+                        <MenuItem
+                            Text="Delete"
                             Clicked="Experience_MenuItem_OnDelete"
                             IsDestructive="True"
-                            CommandParameter="{Binding}"/>
+                            CommandParameter="{Binding}" />
                     </TextCell.ContextActions>
                 </TextCell>
             </DataTemplate>
