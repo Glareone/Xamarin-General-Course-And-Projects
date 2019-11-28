@@ -63,6 +63,15 @@ ICommand:
 
 </details>
 
+<details>
+<summary>Section 14: Xamarin Native(Classic) vs Forms</summary>
+
+![Xamarin-Native1](Readme-images/Section%2014%20-%20Xamarin%20Classic/Details%201.png)
+![Xamarin-Native1](Readme-images/Section%2014%20-%20Xamarin%20Classic/Details%202-Advantages.png)
+![Xamarin-Native1](Readme-images/Section%2014%20-%20Xamarin%20Classic/Details%203-Advantages.png)
+
+</details>
+
 ### Useful links:
 
 Icon generator:
