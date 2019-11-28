@@ -2,6 +2,8 @@
 using Plugin.Media.Abstractions;
 using System;
 using System.ComponentModel;
+using System.IO;
+using Microsoft.WindowsAzure.Storage;
 using Xamarin.Forms;
 
 namespace ImageUploader
@@ -11,6 +13,10 @@ namespace ImageUploader
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
+        // You can get the proper names from portal.azure.com
+        private const string AzureCloudResourceStorageName = "DELETED";
+        private const string ContainerName = "DELETED";
+
         public MainPage()
         {
             InitializeComponent();
@@ -41,6 +47,24 @@ namespace ImageUploader
             }
 
             SelectedImage.Source = ImageSource.FromStream(() => selectedImageFile.GetStream());
+
+            UploadImage(selectedImageFile.GetStream());
+        }
+
+        private async void UploadImage(Stream stream)
+        {
+            var account = CloudStorageAccount.Parse(
+                $"DefaultEndpointsProtocol=https;AccountName={AzureCloudResourceStorageName};AccountKey=Y71CHpv9iyRjJbsu3HWYiLf61NB8FDYWwnper9klnoMlYzlM+lo7V+oaRtyNF5bml6nIxlEyJKLc2AhiPuTMkw==;EndpointSuffix=core.windows.net");
+            var client = account.CreateCloudBlobClient();
+            var container = client.GetContainerReference(ContainerName);
+            await container.CreateIfNotExistsAsync();
+
+            var newImageId = Guid.NewGuid().ToString();
+            var blockBlob = container.GetBlockBlobReference($"{newImageId}.jpg");
+
+            await blockBlob.UploadFromStreamAsync(stream);
+
+            var url = blockBlob.Uri.OriginalString;
         }
     }
 }
