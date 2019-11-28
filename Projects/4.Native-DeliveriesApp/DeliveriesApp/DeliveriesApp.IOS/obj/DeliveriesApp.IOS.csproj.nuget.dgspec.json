@@ -1,0 +1,61 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Xamarin(Udemy)\\Projects\\4.Native-DeliveriesApp\\DeliveriesApp\\DeliveriesApp.IOS\\DeliveriesApp.IOS.csproj": {}
+  },
+  "projects": {
+    "D:\\Xamarin(Udemy)\\Projects\\4.Native-DeliveriesApp\\DeliveriesApp\\DeliveriesApp.IOS\\DeliveriesApp.IOS.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Xamarin(Udemy)\\Projects\\4.Native-DeliveriesApp\\DeliveriesApp\\DeliveriesApp.IOS\\DeliveriesApp.IOS.csproj",
+        "projectName": "DeliveriesApp.IOS",
+        "projectPath": "D:\\Xamarin(Udemy)\\Projects\\4.Native-DeliveriesApp\\DeliveriesApp\\DeliveriesApp.IOS\\DeliveriesApp.IOS.csproj",
+        "packagesPath": "C:\\Users\\enlar\\.nuget\\packages\\",
+        "outputPath": "D:\\Xamarin(Udemy)\\Projects\\4.Native-DeliveriesApp\\DeliveriesApp\\DeliveriesApp.IOS\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\enlar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "xamarinios10"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "xamarinios10": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "xamarinios10": {
+          "dependencies": {
+            "Xamarin.Essentials": {
+              "target": "Package",
+              "version": "[1.2.0, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    }
+  }
+}
