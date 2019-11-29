@@ -1,5 +1,6 @@
 ﻿using Foundation;
 using System;
+using DeliveriesApp.Model;
 using UIKit;
 
 namespace DeliveriesApp.iOS
@@ -22,27 +23,23 @@ namespace DeliveriesApp.iOS
 
         private async void RegisterButton_TouchUpInside(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(passwordTextField.Text))
+            var result = await Users.Register(emailTextField.Text, passwordTextField.Text,
+                confirmpasswordTextField.Text);
+
+            UIAlertController alert;
+
+            if (result)
             {
-                if (passwordTextField.Text == confirmpasswordTextField.Text)
-                {
-                    var user = new User()
-                    {
-                        Email = emailTextField.Text,
-                        Password = passwordTextField.Text
-                    };
-
-                    await AppDelegate.MobileService.GetTable<User>().InsertAsync(user);
-
-                    var alert = UIAlertController.Create("Success", "User inserted", UIAlertControllerStyle.Alert);
-
-                    alert.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
-
-                    PresentViewController(alert, true, null);
-
-                    return;
-                }
+                alert = UIAlertController.Create("Success", "User inserted", UIAlertControllerStyle.Default);
             }
+            else
+            {
+                alert = UIAlertController.Create("Failure", "Try Again", UIAlertControllerStyle.Default);
+            }
+
+            alert.AddAction(UIAlertAction.Create("Ok", UIAlertActionStyle.Default, null));
+
+            PresentViewController(alert, true, null);
         }
     }
 }

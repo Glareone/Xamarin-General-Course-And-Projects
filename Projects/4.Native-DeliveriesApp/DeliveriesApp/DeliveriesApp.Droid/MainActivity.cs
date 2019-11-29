@@ -1,13 +1,10 @@
-﻿using System.Linq;
-using System.Net.Http;
-using Android.App;
+﻿using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Support.V7.App;
 using Android.Runtime;
 using Android.Widget;
 using DeliveriesApp.Model;
-using Microsoft.WindowsAzure.MobileServices;
 
 namespace DeliveriesApp.Droid
 {

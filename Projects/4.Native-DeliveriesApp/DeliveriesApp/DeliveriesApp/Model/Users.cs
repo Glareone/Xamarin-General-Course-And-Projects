@@ -25,5 +25,23 @@ namespace DeliveriesApp.Model
 
             return true;
         }
+
+        public static async Task<bool> Register(string email, string password, string confirmPassword)
+        {
+            if (string.IsNullOrEmpty(password) || string.IsNullOrEmpty(email) ||
+                password != confirmPassword)
+            {
+                return false;
+            }
+
+            var user = new Users
+            {
+                Email = email,
+                Password = password
+            };
+
+            await AzureHelper.MobileServiceClient.GetTable<Users>().InsertAsync(user);
+            return true;
+        }
     }
 }
