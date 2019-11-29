@@ -71,7 +71,9 @@ namespace DeliveriesApp.Droid
             }
 
             Toast.MakeText(this, "Login successful", ToastLength.Long).Show();
-
+            // redirection
+            var intent = new Intent(this, typeof(TabsActivity));
+            StartActivity(intent);
         }
     }
 }

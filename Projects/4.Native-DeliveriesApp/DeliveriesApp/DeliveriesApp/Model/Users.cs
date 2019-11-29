@@ -18,12 +18,7 @@ namespace DeliveriesApp.Model
 
             var user = (await AzureHelper.MobileServiceClient.GetTable<Users>().Where(u => u.Email == email && u.Password == password).ToListAsync()).FirstOrDefault();
 
-            if (user == null)
-            {
-                return false;
-            }
-
-            return true;
+            return user != null;
         }
 
         public static async Task<bool> Register(string email, string password, string confirmPassword)
