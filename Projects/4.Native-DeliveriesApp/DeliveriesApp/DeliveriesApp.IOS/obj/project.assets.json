@@ -25,6 +25,16 @@
         "runtime": {
           "lib/xamarinios10/Xamarin.Essentials.dll": {}
         }
+      },
+      "DeliveriesApp/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/DeliveriesApp.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DeliveriesApp.dll": {}
+        }
       }
     },
     "Xamarin.iOS,Version=v1.0/win": {
@@ -50,6 +60,16 @@
         },
         "runtime": {
           "lib/xamarinios10/Xamarin.Essentials.dll": {}
+        }
+      },
+      "DeliveriesApp/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/DeliveriesApp.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DeliveriesApp.dll": {}
         }
       }
     },
@@ -77,6 +97,16 @@
         "runtime": {
           "lib/xamarinios10/Xamarin.Essentials.dll": {}
         }
+      },
+      "DeliveriesApp/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/DeliveriesApp.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DeliveriesApp.dll": {}
+        }
       }
     },
     "Xamarin.iOS,Version=v1.0/win-x86": {
@@ -102,6 +132,16 @@
         },
         "runtime": {
           "lib/xamarinios10/Xamarin.Essentials.dll": {}
+        }
+      },
+      "DeliveriesApp/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/DeliveriesApp.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DeliveriesApp.dll": {}
         }
       }
     }
@@ -196,10 +236,16 @@
         "xamarin.essentials.1.2.0.nupkg.sha512",
         "xamarin.essentials.nuspec"
       ]
+    },
+    "DeliveriesApp/1.0.0": {
+      "type": "project",
+      "path": "../DeliveriesApp/DeliveriesApp.csproj",
+      "msbuildProject": "../DeliveriesApp/DeliveriesApp.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "Xamarin.iOS,Version=v1.0": [
+      "DeliveriesApp >= 1.0.0",
       "Xamarin.Essentials >= 1.2.0"
     ]
   },
@@ -234,7 +280,11 @@
       },
       "frameworks": {
         "xamarinios10": {
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\Xamarin(Udemy)\\Projects\\4.Native-DeliveriesApp\\DeliveriesApp\\DeliveriesApp\\DeliveriesApp.csproj": {
+              "projectPath": "D:\\Xamarin(Udemy)\\Projects\\4.Native-DeliveriesApp\\DeliveriesApp\\DeliveriesApp\\DeliveriesApp.csproj"
+            }
+          }
         }
       }
     },
