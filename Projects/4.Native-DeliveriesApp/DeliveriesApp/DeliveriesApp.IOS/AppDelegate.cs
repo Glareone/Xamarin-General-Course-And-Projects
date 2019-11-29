@@ -1,4 +1,5 @@
 ﻿using Foundation;
+using Microsoft.WindowsAzure.MobileServices;
 using UIKit;
 
 namespace DeliveriesApp.IOS
@@ -6,8 +7,11 @@ namespace DeliveriesApp.IOS
     // The UIApplicationDelegate for the application. This class is responsible for launching the
     // User Interface of the application, as well as listening (and optionally responding) to application events from iOS.
     [Register ("AppDelegate")]
-    public class AppDelegate : UIResponder, IUIApplicationDelegate {
+    public class AppDelegate : UIResponder, IUIApplicationDelegate
+    {
     
+        public static MobileServiceClient MobileServiceClient = new MobileServiceClient("https://xamarindeliveriesappglareone.azurewebsites.net");
+
         [Export("window")]
         public UIWindow Window { get; set; }
 
