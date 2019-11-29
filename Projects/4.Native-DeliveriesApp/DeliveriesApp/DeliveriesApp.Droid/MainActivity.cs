@@ -1,4 +1,5 @@
-﻿using Android.App;
+﻿using System.Net.Http;
+using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Support.V7.App;
@@ -11,7 +12,7 @@ namespace DeliveriesApp.Droid
     [Activity(Label = "DeliveriesApp.Droid", Theme = "@style/AppTheme", MainLauncher = true)]
     public class MainActivity : AppCompatActivity
     {
-        public static MobileServiceClient MobileServiceClient = new MobileServiceClient("https://xamarindeliveriesappglareone.azurewebsites.net");
+        public static MobileServiceClient MobileServiceClient = new MobileServiceClient("https://xamarindeliveriesappglareone.azurewebsites.net", new HttpClientHandler());
 
         private EditText _emailEditText;
         private EditText _passwordEditText;

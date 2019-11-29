@@ -35,9 +35,23 @@ namespace DeliveriesApp.Droid
             _emailEditText.Text = email;
         }
 
-        private void RegisterButton_Click(object sender, EventArgs e)
+        private async void RegisterButton_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            if (string.IsNullOrEmpty(_passwordEditText.Text) || string.IsNullOrEmpty(_emailEditText.Text) ||
+                _passwordEditText.Text != _confirmPasswordEditText.Text)
+            {
+                Toast.MakeText(this, "Form is filled incorrect", ToastLength.Long).Show();
+                return;
+            }
+
+            var user = new Users
+            {
+                Email = _emailEditText.Text,
+                Password = _passwordEditText.Text
+            };
+
+            await MainActivity.MobileServiceClient.GetTable<Users>().InsertAsync(user);
+            Toast.MakeText(this, "Success", ToastLength.Long).Show();
         }
     }
 }
