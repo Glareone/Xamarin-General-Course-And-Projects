@@ -2,6 +2,7 @@
 using Foundation;
 using UIKit;
 using System.Linq;
+using DeliveriesApp.Model;
 
 namespace DeliveriesApp.iOS
 {
@@ -22,30 +23,24 @@ namespace DeliveriesApp.iOS
         {
             var email = emailTextField.Text;
             var password = passwordTextField.Text;
-            UIAlertController alert = null;
+            UIAlertController alert;
 
-            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
+            var loginResult = await Users.Login(email, password);
+
+            if (!loginResult)
             {
-                alert = UIAlertController.Create("Incomplete", "Email and password cannot be empty", UIAlertControllerStyle.Alert);
-                alert.AddAction(UIAlertAction.Create("Ok", UIAlertActionStyle.Default, null));
+                alert = UIAlertController.Create("Error", "Password and Email are incorrect",
+                    UIAlertControllerStyle.Alert);
             }
             else
             {
-                var user = (await AppDelegate.MobileService.GetTable<User>().Where(u => u.Email == email).ToListAsync()).FirstOrDefault();
-
-                if (user.Password == password)
-                {
-                    alert = UIAlertController.Create("Succeed", "Welcome", UIAlertControllerStyle.Alert);
-                    alert.AddAction(UIAlertAction.Create("Thanks", UIAlertActionStyle.Default, null));
-                }
-                else
-                {
-                    alert = UIAlertController.Create("Failure", "Password is incorrect", UIAlertControllerStyle.Alert);
-                    alert.AddAction(UIAlertAction.Create("Ok", UIAlertActionStyle.Default, null));
-                }
+                alert = UIAlertController.Create("Success", "Welcome",
+                    UIAlertControllerStyle.Alert);
             }
 
+            alert.AddAction(UiAlertAction.Create("Ok", UiAlertActionStyle.Default, null));
             PresentViewController(alert, true, null);
+
         }
 
         public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
