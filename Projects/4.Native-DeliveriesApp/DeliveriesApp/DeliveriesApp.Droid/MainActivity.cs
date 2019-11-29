@@ -1,17 +1,25 @@
-﻿using Android.App;
+﻿using System.Linq;
+using System.Net.Http;
+using Android.App;
+using Android.Content;
 using Android.OS;
 using Android.Support.V7.App;
 using Android.Runtime;
 using Android.Widget;
+using Microsoft.WindowsAzure.MobileServices;
 
 namespace DeliveriesApp.Droid
 {
     [Activity(Label = "DeliveriesApp.Droid", Theme = "@style/AppTheme", MainLauncher = true)]
     public class MainActivity : AppCompatActivity
     {
-        private EditText namEditText;
+        public static MobileServiceClient MobileServiceClient = new MobileServiceClient("https://xamarindeliveriesappglareone.azurewebsites.net", new HttpClientHandler());
 
-        private Button helloButton;
+        private EditText _emailEditText;
+        private EditText _passwordEditText;
+
+        private Button _signInButton;
+        private Button _registerButton;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -20,10 +28,13 @@ namespace DeliveriesApp.Droid
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
 
-            namEditText = FindViewById<EditText>(Resource.Id.nameEditText);
-            helloButton = FindViewById<Button>(Resource.Id.helloButton);
+            _emailEditText = FindViewById<EditText>(Resource.Id.EmailEditText);
+            _passwordEditText = FindViewById<EditText>(Resource.Id.PasswordEditText);
+            _signInButton = FindViewById<Button>(Resource.Id.SignInButton);
+            _registerButton = FindViewById<Button>(Resource.Id.RegisterButton);
 
-            helloButton.Click += HelloButton_Click;
+            _signInButton.Click += SignInButton_Click;
+            _registerButton.Click += RegisterButton_Click;
         }
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
@@ -33,9 +44,39 @@ namespace DeliveriesApp.Droid
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
 
-        private void HelloButton_Click(object sender, System.EventArgs e)
+        private void RegisterButton_Click(object sender, System.EventArgs e)
         {
-            Toast.MakeText(this, $"Hello, {namEditText.Text}", ToastLength.Long).Show();
+            var intent = new Intent(this, typeof(RegisterActivity));
+
+            // if we want to provide information from one page to another. Works like a dictionary
+            // for example - information from emailEditText to emailEditText on register page.
+            intent.PutExtra("email", _emailEditText.Text);
+
+            StartActivity(intent);
+        }
+
+        private async void SignInButton_Click(object sender, System.EventArgs e)
+        {
+            var email = _emailEditText.Text;
+            var password = _passwordEditText.Text;
+
+            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
+            {
+                Toast.MakeText(this, "Email and password cannot be empty", ToastLength.Long).Show();
+                return;
+            }
+
+            var user = (await MobileServiceClient.GetTable<Users>().Where(u => u.Email == email && u.Password == password)
+                .ToListAsync()).FirstOrDefault();
+
+            if (user == null)
+            {
+                Toast.MakeText(this, "Email and password are incorrect", ToastLength.Long).Show();
+                return;
+            }
+
+            Toast.MakeText(this, "Login successful", ToastLength.Long).Show();
+
         }
     }
 }
