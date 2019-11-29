@@ -1,4 +1,5 @@
-﻿using System.Net.Http;
+﻿using System.Linq;
+using System.Net.Http;
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -54,9 +55,28 @@ namespace DeliveriesApp.Droid
             StartActivity(intent);
         }
 
-        private void SignInButton_Click(object sender, System.EventArgs e)
+        private async void SignInButton_Click(object sender, System.EventArgs e)
         {
-            throw new System.NotImplementedException();
+            var email = _emailEditText.Text;
+            var password = _passwordEditText.Text;
+
+            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
+            {
+                Toast.MakeText(this, "Email and password cannot be empty", ToastLength.Long).Show();
+                return;
+            }
+
+            var user = (await MobileServiceClient.GetTable<Users>().Where(u => u.Email == email && u.Password == password)
+                .ToListAsync()).FirstOrDefault();
+
+            if (user == null)
+            {
+                Toast.MakeText(this, "Email and password are incorrect", ToastLength.Long).Show();
+                return;
+            }
+
+            Toast.MakeText(this, "Login successful", ToastLength.Long).Show();
+
         }
     }
 }
