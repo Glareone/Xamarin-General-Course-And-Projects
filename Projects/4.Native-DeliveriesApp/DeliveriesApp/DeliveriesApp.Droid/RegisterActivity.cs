@@ -3,6 +3,7 @@
 using Android.App;
 using Android.OS;
 using Android.Widget;
+using DeliveriesApp.Model;
 
 namespace DeliveriesApp.Droid
 {
@@ -37,21 +38,13 @@ namespace DeliveriesApp.Droid
 
         private async void RegisterButton_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(_passwordEditText.Text) || string.IsNullOrEmpty(_emailEditText.Text) ||
-                _passwordEditText.Text != _confirmPasswordEditText.Text)
+            var result = await Users.Register(_emailEditText.Text, _passwordEditText.Text, _confirmPasswordEditText.Text);
+
+            if (result)
             {
-                Toast.MakeText(this, "Form is filled incorrect", ToastLength.Long).Show();
-                return;
+                Toast.MakeText(this, "Success", ToastLength.Long).Show();
             }
-
-            var user = new Users
-            {
-                Email = _emailEditText.Text,
-                Password = _passwordEditText.Text
-            };
-
-            await MainActivity.MobileServiceClient.GetTable<Users>().InsertAsync(user);
-            Toast.MakeText(this, "Success", ToastLength.Long).Show();
+            Toast.MakeText(this, "Error", ToastLength.Long).Show();
         }
     }
 }

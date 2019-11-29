@@ -1,20 +1,16 @@
-﻿using System.Linq;
-using System.Net.Http;
-using Android.App;
+﻿using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Support.V7.App;
 using Android.Runtime;
 using Android.Widget;
-using Microsoft.WindowsAzure.MobileServices;
+using DeliveriesApp.Model;
 
 namespace DeliveriesApp.Droid
 {
     [Activity(Label = "DeliveriesApp.Droid", Theme = "@style/AppTheme", MainLauncher = true)]
     public class MainActivity : AppCompatActivity
     {
-        public static MobileServiceClient MobileServiceClient = new MobileServiceClient("https://xamarindeliveriesappglareone.azurewebsites.net", new HttpClientHandler());
-
         private EditText _emailEditText;
         private EditText _passwordEditText;
 
@@ -66,10 +62,9 @@ namespace DeliveriesApp.Droid
                 return;
             }
 
-            var user = (await MobileServiceClient.GetTable<Users>().Where(u => u.Email == email && u.Password == password)
-                .ToListAsync()).FirstOrDefault();
+            var loginResult = await Users.Login(email, password);
 
-            if (user == null)
+            if (!loginResult)
             {
                 Toast.MakeText(this, "Email and password are incorrect", ToastLength.Long).Show();
                 return;
