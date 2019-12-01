@@ -22,9 +22,16 @@ namespace DeliveriesApp.Model
         // 2 = delivered
         public int Status { get; set; }
 
-        public static async Task<IEnumerable<Delivery>> GetDeliveries(string id)
+        public static async Task<IEnumerable<Delivery>> GetDeliveries()
         {
-            return await AzureHelper.MobileServiceClient.GetTable<Delivery>().Where(d => d.Id == id).ToListAsync();
+            var deliveries = await AzureHelper.MobileServiceClient.GetTable<Delivery>().Where(d => d.Status != 2).ToListAsync();
+            return deliveries;
+        }
+
+        public static async Task<IEnumerable<Delivery>> GetDelivered()
+        {
+            var deliveries = await AzureHelper.MobileServiceClient.GetTable<Delivery>().Where(d => d.Status == 2).ToListAsync();
+            return deliveries;
         }
 
         public static async Task<bool> InsertDelivery(Delivery delivery)

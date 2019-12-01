@@ -1,22 +1,18 @@
-﻿using Android.OS;
-using Android.Support.V4.App;
-using Android.Views;
+﻿using System.Linq;
+using Android.OS;
+using DeliveriesApp.Model;
 
 namespace DeliveriesApp.Droid
 {
-    public class DeliveredFragment : Fragment
+    public class DeliveredFragment : Android.Support.V4.App.ListFragment
     {
-        public override void OnCreate(Bundle savedInstanceState)
+        public override async void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
             // Create your fragment here
-        }
-
-        public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
-        {
-            // Use this to return your custom view for this Fragment
-            return inflater.Inflate(Resource.Layout.Delivered, container, false);
+            var deliveries = (await Delivery.GetDelivered()).ToList();
+            ListAdapter = new DeliveryAdapter(Activity, deliveries);
         }
     }
 }
