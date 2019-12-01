@@ -71,9 +71,12 @@ namespace DeliveriesApp.Droid
             }
 
             Toast.MakeText(this, "Login successful", ToastLength.Long).Show();
-            // redirection
+
+            // Redirect to tabs page
             var intent = new Intent(this, typeof(TabsActivity));
             StartActivity(intent);
+            // Prevent Possibility to move back from Tabs page to login page (pressing "back" button).
+            Finish();
         }
     }
 }

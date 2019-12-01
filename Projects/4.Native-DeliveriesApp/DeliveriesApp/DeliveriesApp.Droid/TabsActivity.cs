@@ -8,6 +8,7 @@ namespace DeliveriesApp.Droid
     public class TabsActivity : Android.Support.V4.App.FragmentActivity
     {
         private TabLayout _tabLayout;
+        private Android.Support.V7.Widget.Toolbar _tabsToolbar;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -19,7 +20,19 @@ namespace DeliveriesApp.Droid
             _tabLayout = FindViewById<TabLayout>(Resource.Id.mainTabLayout);
             _tabLayout.TabSelected += TabLayout_Selected;
 
+            _tabsToolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.tabsToolbar);
+            _tabsToolbar.InflateMenu(Resource.Menu.TabsMenu);
+            _tabsToolbar.MenuItemClick += TabsToolbar_MenuItemClick;
+
             FragmentNavigate(new DeliveriesFragment());
+        }
+
+        private void TabsToolbar_MenuItemClick(object sender, Android.Support.V7.Widget.Toolbar.MenuItemClickEventArgs e)
+        {
+            if (e.Item.ItemId == Resource.Id.action_add)
+            {
+                StartActivity(typeof(NewDeliveryActivity));
+            }
         }
 
         private void TabLayout_Selected(object sender, TabLayout.TabSelectedEventArgs e)
