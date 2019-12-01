@@ -1,6 +1,5 @@
 ﻿using System.Linq;
 using Android.OS;
-using Android.Widget;
 using DeliveriesApp.Model;
 
 namespace DeliveriesApp.Droid
@@ -13,7 +12,7 @@ namespace DeliveriesApp.Droid
 
             // Create your fragment here
             var deliveries = (await Delivery.GetDelivered()).ToList();
-            ListAdapter = new ArrayAdapter(Activity, Android.Resource.Layout.SimpleListItem1, deliveries);
+            ListAdapter = new DeliveryAdapter(Activity, deliveries);
         }
     }
 }

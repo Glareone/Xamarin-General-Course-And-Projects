@@ -39,10 +39,5 @@ namespace DeliveriesApp.Model
             await AzureHelper.MobileServiceClient.GetTable<Delivery>().InsertAsync(delivery);
             return true;
         }
-
-        public override string ToString()
-        {
-            return $"{Name} - {Status}";
-        }
     }
 }
