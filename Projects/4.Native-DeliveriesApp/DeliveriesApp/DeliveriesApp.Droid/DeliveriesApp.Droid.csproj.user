@@ -3,8 +3,8 @@
   <PropertyGroup>
     <AndroidDesignerPreferredDevice>pixel_2</AndroidDesignerPreferredDevice>
     <AndroidDesignerPreferredTheme>Theme.DeviceDefault</AndroidDesignerPreferredTheme>
-    <SelectedDevice>pixel_2_pie_9_0_api_28</SelectedDevice>
-    <DefaultDevice>pixel_2_pie_9_0_api_28</DefaultDevice>
+    <SelectedDevice>pixel_oreo_8_1_api_27</SelectedDevice>
+    <DefaultDevice>pixel_oreo_8_1_api_27</DefaultDevice>
     <ProjectView>ShowAllFiles</ProjectView>
   </PropertyGroup>
 </Project>
