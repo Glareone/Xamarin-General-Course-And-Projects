@@ -2,6 +2,7 @@
 using Android.OS;
 using Android.Widget;
 using DeliveriesApp.Model;
+//using Android.Gsm.Map;
 
 namespace DeliveriesApp.Droid
 {
@@ -10,6 +11,7 @@ namespace DeliveriesApp.Droid
     {
         private Button _saveButton;
         private EditText _packageEditText;
+        //Android.MapFragment
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -20,6 +22,8 @@ namespace DeliveriesApp.Droid
 
             _saveButton = FindViewById<Button>(Resource.Id.saveButton);
             _packageEditText = FindViewById<EditText>(Resource.Id.packageNameEditText);
+
+            //var mapFragment = (MapFragment)FragmentManager.FindFragmentById(Resource.Id.map);
 
             _saveButton.Click += SaveButton_Click;
         }
