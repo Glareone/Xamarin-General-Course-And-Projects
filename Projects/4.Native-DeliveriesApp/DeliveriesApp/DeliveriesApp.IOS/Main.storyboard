@@ -351,11 +351,43 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the origin location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="14449" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="20" y="110" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="14452" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="20" y="139" width="560" height="143"/>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the destination location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="14453" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="20" y="290" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="14454" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="20" y="318.5" width="560" height="143"/>
+                            </mapView>
                         </subviews>
                         <constraints>
                             <constraint id="8791" firstItem="8788" firstAttribute="leading" secondItem="7999" secondAttribute="leadingMargin"/>
                             <constraint id="8792" firstItem="8788" firstAttribute="trailing" secondItem="7999" secondAttribute="trailingMargin"/>
                             <constraint id="8793" firstItem="8788" firstAttribute="top" secondItem="7995" secondAttribute="bottom" constant="8"/>
+                            <constraint id="14455" firstItem="14449" firstAttribute="top" secondItem="8788" secondAttribute="bottom" constant="8"/>
+                            <constraint id="14456" firstItem="14449" firstAttribute="width" secondItem="8788" secondAttribute="width"/>
+                            <constraint id="14457" firstItem="14449" firstAttribute="leading" secondItem="7999" secondAttribute="leadingMargin"/>
+                            <constraint id="14458" firstItem="14452" firstAttribute="top" secondItem="14449" secondAttribute="bottom" constant="8"/>
+                            <constraint id="14459" firstItem="14452" firstAttribute="leading" secondItem="7999" secondAttribute="leadingMargin"/>
+                            <constraint id="14460" firstItem="14452" firstAttribute="trailing" secondItem="7999" secondAttribute="trailingMargin"/>
+                            <constraint id="14461" firstItem="14453" firstAttribute="centerY" secondItem="7999" secondAttribute="centerY"/>
+                            <constraint id="14462" firstItem="14453" firstAttribute="leading" secondItem="7999" secondAttribute="leadingMargin"/>
+                            <constraint id="14463" firstItem="14453" firstAttribute="width" secondItem="14449" secondAttribute="width"/>
+                            <constraint id="14464" firstItem="14453" firstAttribute="top" secondItem="14452" secondAttribute="bottom" constant="8"/>
+                            <constraint id="14465" firstItem="14454" firstAttribute="top" secondItem="14453" secondAttribute="bottom" constant="8"/>
+                            <constraint id="14466" firstItem="14454" firstAttribute="leading" secondItem="7999" secondAttribute="leadingMargin"/>
+                            <constraint id="14467" firstItem="14454" firstAttribute="trailing" secondItem="7999" secondAttribute="trailingMargin"/>
+                            <constraint id="14468" firstItem="14454" firstAttribute="height" secondItem="14452" secondAttribute="height"/>
                         </constraints>
                     </view>
                     <navigationItem title="New Delivery" id="8454" key="navigationItem">
@@ -364,6 +396,8 @@
                     <connections>
                         <outlet property="saveBarButtonItem" destination="8455" id="name-outlet-8455"/>
                         <outlet property="packageNameTextField" destination="8788" id="name-outlet-8788"/>
+                        <outlet property="originMapView" destination="14452" id="name-outlet-14452"/>
+                        <outlet property="destinationMapView" destination="14454" id="name-outlet-14454"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8000" userLabel="First Responder" sceneMemberID="firstResponder"/>

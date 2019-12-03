@@ -44,5 +44,7 @@
 	</array>
 	<key>XSAppIconAssets</key>
 	<string>Resources/Images.xcassets/AppIcons.appiconset</string>
+  <key>NSLocationWhenInUseUsageDescription</key>
+  <string>We need to access your location to improve user experience</string>
 </dict>
 </plist>

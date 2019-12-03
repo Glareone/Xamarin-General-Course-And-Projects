@@ -14,5 +14,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/saveButton" />
+    <TextView
+        android:text="Locate Package Origin"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView1" />
+    <fragment
+      class="com.google.android.gms.maps.MapFragment"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/mapFragment"/>
 
 </LinearLayout>
