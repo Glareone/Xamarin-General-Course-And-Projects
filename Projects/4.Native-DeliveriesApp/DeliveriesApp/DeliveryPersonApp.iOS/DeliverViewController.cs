@@ -53,7 +53,25 @@ namespace DeliveryPersonApp.iOS
 
         private async void DeliverBarButtonItem_Clicked(object sender, EventArgs e)
         {
-            await Delivery.MarkAsDelivered(delivery);
+            var haptic = new UINotificationFeedbackGenerator();
+            haptic.Prepare();
+
+            bool result = await Delivery.MarkAsDelivered(delivery);
+
+            UIAlertController alert = null;
+            if (result)
+            {
+                haptic.NotificationOccurred(UINotificationFeedbackType.Success);
+                alert = UIAlertController.Create("Success", "Delivery has been delivered", UIAlertControllerStyle.Alert);
+            }
+            else
+            {
+                haptic.NotificationOccurred(UINotificationFeedbackType.Error);
+                alert = UIAlertController.Create("Failure", "Please try again", UIAlertControllerStyle.Alert);
+            }
+
+            alert.AddAction(UIAlertAction.Create("Ok", UIAlertActionStyle.Default, null));
+            PresentViewController(alert, true, null);
         }
     }
 }
